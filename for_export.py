@@ -111,6 +111,12 @@ def _sid2per(sid):
 	username = session.sid_open(sid).username
 	return personal.get_personal(username)
 
+def keepalive(sid):
+	"Keepalive para la sesion, devuelve el ttl de la misma."
+	s = session.sid_open(sid)
+	s.touch()
+	return s.ttl
+
 def get_personal(sid):
 	"Devuelve un diccionario con la informacion personal"
 	return _sid2per(sid).todict()
@@ -231,6 +237,7 @@ list = [
 	get_areas,
 	get_materias,
 	get_correlativas,
+	keepalive,
 	get_personal,
 	set_personal,
 	set_passwd,
