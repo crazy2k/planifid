@@ -1,0 +1,15 @@
+
+Para ahora
+* multiples conexiones simultaneas
+* rate control
+* limitar cantidad de cookies simultaneas (cookie cache como personal?)
+* marcar materias por utilidad (binario o escala?)
+* revisar los creditos (obtencion, etc.)
+* get_estado_materias() acepte multiples materias (o todas)
+* keepalive para las sesiones (devuelve el ttl de la sesion)
+
+
+Para mas adelante
+* soporte de equivalencias
+* soporte multiples carreras
+
