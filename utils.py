@@ -16,6 +16,6 @@ def clean(s):
 			break
 		if i in permitidos:
 			v += i
-			count++
+			count += 1
 	return v
 
