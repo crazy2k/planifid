@@ -1,0 +1,131 @@
+# Archivo de descripción de la carrera Ingeniería Industrial
+# 20/3/2004 - Margarita Manterola <mamante@fi.uba.ar>
+
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# Se necesita con suma urgencia que alguien que estudie Ing. Industrial
+# valide que la información aquí volcada es correcta.
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+# Nombre de la carrera:
+carrera = Ingeniería Industrial
+
+# Cantidad de créditos total:
+creditos = 240
+
+# Si la carrera no requiere que el estudiante desarrolle una Tesis o Trabajo 
+# Profesional, el siguente valor debe ser 0:
+tiene_tesis = 1
+
+# A continuación se describe cómo se reparten los créditos.
+# Los valores que pueden ser definidos son:
+#
+#   creditos_obl	Cant. mínima de créditos en materias obligatorias
+#   creditos_obl_area	Cant. mínima de créditos en materias obligatorias
+#			del área elegida
+#   creditos_tesis	Cant. mínima de créditos en materias optativas del
+#			área elegida necesarios para realizar la tesis
+#   creditos_tprof	Idem para realizar el Trabajo Profesional
+#
+# La cantidad de créditos que falta para llegar al valor total se supone que
+# se asignan en materias optativas libres.
+
+creditos_obl = 198
+#creditos_obl_area = 28
+#creditos_tesis = 4
+#creditos_tprof = 32
+
+#=============================================================================
+# Lista de materias
+#
+# La sintaxis para definir una materia es:
+#
+# 	COD	CORR1, CORR2, ...
+#
+# Las correlativas se especifican con una lista de requisitos separados por 
+# comas. Los requisitos pueden ser:
+#
+#   	xx.xx		El código de una materia. Ej: 61.09
+#	!xx.xx		Una materia que NO debe estar aprobada. Ej: !75.28
+#	xxm		Cantidad mínima de materias aprobadas. Ej: 20m
+#	xxxc		Cantidad mínima de créditos. Ej: 140c
+#
+# Las siguientes declaraciones indican las propiedades de las materias que
+# se mencionen a partir de esa línea:
+#
+# 	[obligatorias]
+#	[optativas]
+#	[area COD Nombre del Area u Orientación]
+#
+# donde COD debe ser un código que identifique al área de la carrera, o 
+# 0 para indicar que las materias que siguen no pertenecen a ningún área.
+
+[obligatorias]
+
+61.03
+62.01
+63.01
+61.06
+61.08
+62.03	61.03, 62.01
+63.11	63.01
+64.04	61.03, 61.08, 62.01
+65.03	61.08, 62.03
+67.03
+75.01
+67.52	62.03
+71.01	48c
+72.01	63.11, 64.04
+75.12	61.03, 61.08, 75.01
+67.12	64.04, 67.03
+67.51	67.52
+69.03	61.03, 61.08, 62.01
+71.03	61.06
+71.04	61.06, 71.01
+71.05	71.04
+71.06	71.01
+72.02	67.52, 69.03, 72.01
+71.07	71.03
+72.04	67.03, 67.12, 71.05, 72.01
+72.18	72.02
+71.08	71.05
+72.05	64.04, 72.18
+72.06	65.03, 67.12, 72.18
+77.01	72.02
+71.50	71.05, 71.06
+72.07	65.03, 71.05, 72.18
+71.22	100c
+71.51	71.50
+77.02	77.01
+72.00	140c, !72.99
+72.99	71.08, 72.02, 72.05, 72.18, !72.00
+
+[optativas]
+
+61.10	61.03, 61.08
+62.06	61.03, 61.08, 62.01
+62.07	62.06, 61.10
+62.13	61.08, 62.03, 63.01
+67.17	63.11, 67.03, 67.12
+71.32	71.07
+71.33	71.08
+71.34	71.51
+71.35	71.03
+71.36	71.03, 71.08
+71.37	71.08
+71.43	71.08
+71.44	71.05
+71.45	71.08
+72.09	72.18
+72.10	72.18
+72.11	72.18
+72.12	72.02
+72.13	72.01
+72.14	72.01, 71.05
+72.15	72.18
+72.17	72.18
+78.01	!78.02, !78.03, !78.04, !78.05
+78.02	!78.01, !78.03, !78.04, !78.05
+78.03	!78.01, !78.02, !78.04, !78.05
+78.04	!78.01, !78.02, !78.03, !78.05
+78.05	!78.01, !78.02, !78.03, !78.04
+

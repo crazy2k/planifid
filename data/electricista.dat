@@ -1,0 +1,125 @@
+# Archivo de descripción de la carrera Ingeniería Electricista.
+# 21/3/2004 - Margarita Manterola <mamante@fi.uba.ar>
+
+# Nobbre de la carrera:
+carrera = Ingeniería Electricista
+
+# Cantidad de créditos total:
+creditos = 240
+
+# Si la carrera no requiere que el estudiante desarrolle una Tesis o Trabajo 
+# Profesional, el siguente valor debe ser 0:
+tiene_tesis = 1
+
+# A continuación se describe cómo se reparten los créditos.
+# Los valores que pueden ser definidos son:
+#
+#   creditos_obl	Cant. mínima de créditos en materias obligatorias
+#   creditos_obl_area	Cant. mínima de créditos en materias obligatorias
+#			del área elegida
+#   creditos_tesis	Cant. mínima de créditos en materias optativas del
+#			área elegida necesarios para realizar la tesis
+#   creditos_tprof	Idem para realizar el Trabajo Profesional
+#
+# La cantidad de créditos que falta para llegar al valor total se supone que
+# se asignan en materias optativas libres.
+
+creditos_obl = 168
+# creditos_obl_area = 
+# creditos_tesis =
+# creditos_tprof = 
+
+#=============================================================================
+# Lista de materias
+#
+# La sintaxis para definir una materia es:
+#
+# 	COD	CORR1, CORR2, ...
+#
+# Las correlativas se especifican con una lista de requisitos separados por 
+# comas. Los requisitos pueden ser:
+#
+#   	xx.xx		El código de una materia. Ej: 61.09
+#	!xx.xx		Una materia que NO debe estar aprobada. Ej: !75.28
+#	xxm		Cantidad mínima de materias aprobadas. Ej: 20m
+#	xxxc		Cantidad mínima de créditos. Ej: 140c
+#
+# Las siguientes declaraciones indican las propiedades de las materias que
+# se mencionen a partir de esa línea:
+#
+# 	[obligatorias]
+#	[optativas]
+#	[area COD Nombre del Area u Orientación]
+#
+# donde COD debe ser un código que identifique al área de la carrera, o 
+# 0 para indicar que las materias que siguen no pertenecen a ningún área.
+
+[obligatorias]
+
+61.03
+62.01
+67.03
+75.01
+61.08
+62.04
+63.01
+61.06	61.03
+61.10	61.03, 61.08
+65.01	61.08, 62.04
+67.10	62.01
+62.05	61.08, 62.04, 63.01
+62.08	61.08, 62.04
+64.05	61.03, 61.08, 62.01
+65.36	65.01
+65.09	61.10, 65.01
+66.04	62.05, 65.01
+75.12	61.03, 61.08, 75.01
+65.10	62.08
+65.11	62.05, 65.36
+67.36	64.05
+65.12	65.11
+65.13	62.08, 65.01
+67.37	67.10
+65.14	65.13
+66.05	66.04
+71.39	100c
+65.00	140c
+65.99	140c
+
+[optativas]
+
+62.11	61.10, 62.01
+62.15	65.09, 65.10, 65.13
+65.16	65.09, 65.13
+65.17	65.13, 67.37
+65.21	66.04, 67.36
+65.22	65.12, 66.04, 67.10
+65.25	65.12, 65.13, 67.36
+65.28	65.09
+65.29	66.05
+65.33
+65.34	65.36
+65.37	65.13, 67.37
+65.38	65.36
+65.39	65.36
+65.40	65.13
+65.41	65.13, 65.09
+65.42	65.09, 65.36, 65.13
+65.44	65.01
+65.45	71.01
+65.46	65.13
+65.47	67.37
+66.01	61.08, 75.01
+66.07	61.06, 65.09
+66.18	66.07
+67.38	67.36
+71.01	61.03
+71.06	71.01
+71.36	61.06
+77.01	100c
+78.01	!78.02, !78.03, !78.04, !78.05
+78.02	!78.01, !78.03, !78.04, !78.05
+78.03	!78.01, !78.02, !78.04, !78.05
+78.04	!78.01, !78.02, !78.03, !78.05
+78.05	!78.01, !78.02, !78.03, !78.04
+

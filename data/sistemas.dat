@@ -1,0 +1,111 @@
+# Archivo de descripción de la carrera de Análisis de Sistemas
+# 15/03/2004 - Diego Essaya <dessaya@fi.uba.ar>
+
+# Nobbre de la carrera:
+carrera = Licenciatura en Análisis de Sistemas
+
+# Cantidad de créditos total:
+creditos = 168
+
+# Si la carrera no requiere que el estudiante desarrolle una Tesis o Trabajo 
+# Profesional, el siguente valor debe ser 0:
+tiene_tesis = 0
+
+# A continuación se describe cómo se reparten los créditos.
+# Los valores que pueden ser definidos son:
+#
+#   creditos_obl	Cant. mínima de créditos en materias obligatorias
+#   creditos_obl_area	Cant. mínima de créditos en materias obligatorias
+#			del área elegida
+#   creditos_tesis	Cant. mínima de créditos en materias optativas del
+#			área elegida necesarios para realizar la tesis
+#   creditos_tprof	Idem para realizar el Trabajo Profesional
+#
+# La cantidad de créditos que falta para llegar al valor total se supone que
+# se asignan en materias optativas libres.
+
+creditos_obl = 128
+# creditos_obl_area = 
+# creditos_tesis =
+# creditos_tprof = 
+
+#=============================================================================
+# Lista de materias
+#
+# La sintaxis para definir una materia es:
+#
+# 	COD	CORR1, CORR2, ...
+#
+# Las correlativas se especifican con una lista de requisitos separados por 
+# comas. Los requisitos pueden ser:
+#
+#   	xx.xx		El código de una materia. Ej: 61.09
+#	!xx.xx		Una materia que NO debe estar aprobada. Ej: !75.28
+#	xxm		Cantidad mínima de materias aprobadas. Ej: 20m
+#	xxxc		Cantidad mínima de créditos. Ej: 140c
+#
+# Las siguientes declaraciones indican las propiedades de las materias que
+# se mencionen a partir de esa línea:
+#
+# 	[obligatorias]
+#	[optativas]
+#	[area COD Nombre del Area u Orientación]
+#
+# donde COD debe ser un código que identifique al área de la carrera, o 
+# 0 para indicar que las materias que siguen no pertenecen a ningún área.
+
+[obligatorias]
+
+61.03
+61.08
+75.40
+61.07
+75.03	75.40
+75.41	75.40
+61.09	61.03, 61.08
+71.12
+75.06	75.03, 75.41
+75.07	75.03, 75.41
+71.13	71.12
+75.08	75.06
+75.09	75.06, 75.07
+75.42	75.03, 75.41
+71.14	61.07, 61.03, 61.08
+75.10	75.09
+75.15	75.09
+71.15	71.14, 61.09
+71.16	71.12, 71.14
+75.17	75.10
+75.18	71.13, 71.16, 75.17
+
+[optativas]
+71.17
+71.18
+71.20	71.15
+71.46	71.13
+75.12	61.03, 61.08, 75.41
+75.14	61.07
+75.16	75.07, 75.08, 75.14
+75.19	75.08
+75.20	75.08
+75.22	75.08
+75.23	75.41
+75.24	75.41
+75.26	61.09
+75.27	75.07
+75.29	61.07, 75.41
+75.32	71.13, 75.10, 75.15
+75.33	75.08, 75.15
+75.34	75.33
+75.36	75.15
+75.38	75.12
+75.39	75.08, 75.09
+75.50	61.09, 71.14
+75.71	75.07
+75.72	75.41, 75.06
+78.01	!78.02, !78.03, !78.04, !78.05
+78.02	!78.01, !78.03, !78.04, !78.05
+78.03	!78.01, !78.02, !78.04, !78.05
+78.04	!78.01, !78.02, !78.03, !78.05
+78.05	!78.01, !78.02, !78.03, !78.04
+

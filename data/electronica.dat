@@ -1,0 +1,184 @@
+# Archivo de descripción de la carrera Ingeniería Electrónica.
+# 9/3/2004 - Diego Essaya <dessaya@fi.uba.ar>
+
+# Nobbre de la carrera:
+carrera = Ingeniería Electrónica
+
+# Cantidad de créditos total:
+creditos = 240
+
+# Si la carrera no requiere que el estudiante desarrolle una Tesis o Trabajo 
+# Profesional, el siguente valor debe ser 0:
+tiene_tesis = 1
+
+# A continuación se describe cómo se reparten los créditos.
+# Los valores que pueden ser definidos son:
+#
+#   creditos_obl	Cant. mínima de créditos en materias obligatorias
+#   creditos_obl_area	Cant. mínima de créditos en materias obligatorias
+#			del área elegida
+#   creditos_tesis	Cant. mínima de créditos en materias optativas del
+#			área elegida necesarios para realizar la tesis
+#   creditos_tprof	Idem para realizar el Trabajo Profesional
+#
+# La cantidad de créditos que falta para llegar al valor total se supone que
+# se asignan en materias optativas libres.
+
+creditos_obl = 134
+# creditos_obl_area = 
+creditos_tesis = 26
+# creditos_tprof = 
+
+#=============================================================================
+# Lista de materias
+#
+# La sintaxis para definir una materia es:
+#
+# 	COD	CORR1, CORR2, ...
+#
+# Las correlativas se especifican con una lista de requisitos separados por 
+# comas. Los requisitos pueden ser:
+#
+#   	xx.xx		El código de una materia. Ej: 61.09
+#	!xx.xx		Una materia que NO debe estar aprobada. Ej: !75.28
+#	xxm		Cantidad mínima de materias aprobadas. Ej: 20m
+#	xxxc		Cantidad mínima de créditos. Ej: 140c
+#
+# Las siguientes declaraciones indican las propiedades de las materias que
+# se mencionen a partir de esa línea:
+#
+# 	[obligatorias]
+#	[optativas]
+#	[area COD Nombre del Area u Orientación]
+#
+# donde COD debe ser un código que identifique al área de la carrera, o 
+# 0 para indicar que las materias que siguen no pertenecen a ningún área.
+
+[obligatorias]
+
+61.03
+61.08
+62.01
+61.10	61.03, 61.08
+62.03	61.03, 62.01
+63.01
+75.02
+61.09	61.03, 61.08
+62.05	61.08, 62.03, 63.01
+66.01	61.08, 75.02
+66.02	62.03
+66.06	61.10, 62.03
+66.07	61.09, 66.06
+66.09	66.01, 66.02
+66.08	62.05, 66.02, 66.06
+66.10	66.07, 66.08
+66.44	66.09, 66.10
+71.27	120c
+66.12	140c
+66.00	140c
+66.99	140c
+
+[optativas]
+
+61.07
+61.18	61.03, 61.08
+61.19	61.10
+61.21	61.03, 61.08
+62.09	62.03
+62.10	62.05
+62.11	61.10, 62.01
+65.06	66.06
+66.15	61.03, 61.09
+66.25	62.05
+66.43	66.10
+66.45	66.10, 66.02
+66.46	66.07
+66.47	66.38, 66.51
+66.48	20m
+66.49	66.07, 63.01
+66.50	66.08
+66.57	62.09
+66.61	66.08
+66.62	66.21, !75.34
+66.63	66.07, 66.15
+66.64	66.28
+66.65	66.28
+66.66	20m
+66.67	66.10
+66.68	66.67
+66.69	66.07, 66.09
+71.01	61.03
+71.04	61.09
+71.05	71.04
+71.07	61.08
+71.23	61.03
+71.31	20m
+71.36	61.09
+75.12	61.03, 61.08, 75.02
+75.34	66.21, 75.08, 75.28, !66.62
+75.38	75.12
+78.01	!78.02, !78.03, !78.04, !78.05
+78.02	!78.01, !78.03, !78.04, !78.05
+78.03	!78.01, !78.02, !78.04, !78.05
+78.04	!78.01, !78.02, !78.03, !78.05
+78.05	!78.01, !78.02, !78.03, !78.04
+
+#=============================================================================
+[area COMP Computadoras]
+
+[optativas]
+
+61.17	61.07
+66.17	66.01
+66.19	66.01, 66.08
+66.20	66.09
+66.22	66.02, 66.07, 66.15
+66.24	66.01, 66.07, 66.15
+66.26	66.20
+66.33	66.09
+66.35	61.07, 66.17
+66.51	66.07, 66.15
+66.71	61.10, 75.04
+75.04	75.02
+75.08	66.20, 75.04
+75.22	75.08
+75.23	75.04, 61.07
+75.28	75.04
+75.29	61.07, 75.04
+75.30	75.29
+75.31	75.04
+
+#=============================================================================
+[area COMU Comunicaciones]
+
+[optativas]
+
+66.21	66.07
+66.23	66.07, 66.15
+66.34	66.07, 66.15
+66.37	66.23, 66.24, 66.22
+66.38	66.07, 66.15
+66.39	66.38
+66.40	66.34
+66.41	66.10, 66.23
+66.42	66.34
+66.54	62.09
+66.58	66.10, 66.07
+66.59	66.07, 66.15
+
+#=============================================================================
+[area CONT Control]
+
+[optativas]
+
+66.18	66.07
+66.27	66.18, 66.10, 65.06
+66.28	66.18
+66.29	66.18
+66.30	66.18
+66.31	66.18
+66.32	66.18
+66.53	66.18, 66.10
+66.55	66.18
+66.56	66.18
+

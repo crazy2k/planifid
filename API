@@ -1,0 +1,94 @@
+
+Las funciones que se exportan por XML-RPC se dividen en dos: las publicas, sin
+requerimiento de autenticacion previa, y las privadas que la requieren.
+
+Las publicas
+------------
+
+get_carreras():
+	Sin parametros.
+	Devuelve un diccionario { 'COD': 'Descripcion', ... } de las carreras
+	disponibles.
+
+get_areas(carrera):
+	carrera: Codigo de la carrera de la cual obtener las areas.
+	Devuelve un diccionario { 'COD': 'Descripcion', ... } de las areas
+	disponibles en la carrera dada.
+
+get_materias(carrera, area):
+	carrera: Codigo de la carrera de la cual obtener las materias.
+	area: Codigo del area de la cual obtener las materias; de ser el
+		string vacio ("") se devuelven todas las materias de la
+		carrera.
+	Devuelve un diccionario { 'COD': 'Descripcion', ... } de las materias
+	disponibles en la carrera y el area dadas.
+
+get_correlativas(carrera, materia):
+	carrera: Codigo de la carrera.
+	materia: Codigo de la materia de la cual obtener las correlativas.
+	Devuelve un diccionario { 'COD': 'Descripcion', ... } de las materias
+	correlativas completas a la dada.
+
+
+Las privadas
+------------
+
+Estas funciones son autenticadas y toman como primer parametro un cookie de
+autenticacion. El procedimiento para su uso es:
+
+* Registrar una cuenta, de no tener una previamente, con register().
+* Autenticar con auth().
+* Utilizar las funciones pasando el cookie que devuelve auth() como primer
+	parametro.
+
+El cookie tiene un tiempo de expiracion de 10 minutos, por lo tanto luego de
+ese tiempo de inactividad es descartado y se torna inutil. Cualquier funcion
+que involucre pasar el cookie resetea el contador de inactividad.
+
+register(username, password):
+	Registra el nombre de usuario y la clave para poder utilizar el
+	sistema. Devuelve 0 si se registro exitosamente, 1 si el usuario ya
+	existe o 2 si hubo otro error.
+
+auth(username, password):
+	Autentica el usuario y la clave dadas, devolviendo de ser exitoso un
+	cookie (representado en un string de longitud variable) que debe ser
+	pasado como primer parametro al resto de las funciones.
+
+get_personal(sid):
+	Devuelve un diccionario con la informacion personal.
+
+set_personal(sid, dic):
+	Setea, en base al diccionario "dic", la informacion personal.
+
+set_passwd(sid, passwd):
+	Setea la clave.
+
+get_estado_materia(sid, materia):
+	Devuelve el estado de una materia:
+		-4      no esta en el plan de estudios
+		-3      no se puede cursar por correlatividades
+		-2      se puede cursar
+		-1      esta cursando
+		>= 0    nota
+	El parametro "materia" es el codigo de la materia, de la forma
+	devuelta en get_materias().
+
+set_estado_materia(sid, materia, estado):
+	Marca una materia segun el estado:
+		-2      no se curso nunca (sirve para corregir errores)
+		-1      se esta cursando
+		>= 0    nota
+
+get_aprobadas(sid):
+	Devuelve un diccionario con las materias aprobadas, cuya clave es el
+	codigo de materia y el valor es la descripcion de la misma.
+
+get_cursando(sid):
+	Devuelve un diccionario con las materias que se estan cursando.
+
+get_para_cursar(sid):
+	Devuelve un diccionario con las materias que se pueden cursar
+
+
+

@@ -1,0 +1,133 @@
+# Archivo de descripción de la carrera Ingeniería Naval y Mecánica
+# 20/3/2004 - Margarita Manterola <mamante@fi.uba.ar>
+
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# Se necesita con suma urgencia que alguien que estudie Ing. Naval
+# valide que la información aquí volcada es correcta.
+# (la guía es poco clara con respecto a créditos, tesis y demás)
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+# Nombre de la carrera:
+carrera = Ingeniería Naval y Mecánica
+
+# Cantidad de créditos total:
+creditos = 264
+
+# A continuación se describe cómo se reparten los créditos.
+# Si la carrera no requiere que el estudiante desarrolle una Tesis o Trabajo 
+# Profesional, el siguente valor debe ser 0:
+tiene_tesis = 1
+
+# Los valores que pueden ser definidos son:
+#
+#   creditos_obl	Cant. mínima de créditos en materias obligatorias
+#   creditos_obl_area	Cant. mínima de créditos en materias obligatorias
+#			del área elegida
+#   creditos_tesis	Cant. mínima de créditos en materias optativas del
+#			área elegida necesarios para realizar la tesis
+#   creditos_tprof	Idem para realizar el Trabajo Profesional
+#
+# La cantidad de créditos que falta para llegar al valor total se supone que
+# se asignan en materias optativas libres.
+
+creditos_obl = 226
+#creditos_obl_area = 28
+#creditos_tesis = 28
+#creditos_tprof = 32
+
+#=============================================================================
+# Lista de materias
+#
+# La sintaxis para definir una materia es:
+#
+# 	COD	CORR1, CORR2, ...
+#
+# Las correlativas se especifican con una lista de requisitos separados por 
+# comas. Los requisitos pueden ser:
+#
+#   	xx.xx		El código de una materia. Ej: 61.09
+#	!xx.xx		Una materia que NO debe estar aprobada. Ej: !75.28
+#	xxm		Cantidad mínima de materias aprobadas. Ej: 20m
+#	xxxc		Cantidad mínima de créditos. Ej: 140c
+#
+# Las siguientes declaraciones indican las propiedades de las materias que
+# se mencionen a partir de esa línea:
+#
+# 	[obligatorias]
+#	[optativas]
+#	[area COD Nombre del Area u Orientación]
+#
+# donde COD debe ser un código que identifique al área de la carrera, o 
+# 0 para indicar que las materias que siguen no pertenecen a ningún área.
+
+[obligatorias]
+
+61.03
+61.08
+62.01
+62.03	61.03, 62.01
+63.01
+67.02
+75.01
+62.06	61.03, 61.08, 62.01
+64.11	62.01, 67.02
+67.07	67.02
+67.13	63.01
+75.12	61.03, 61.08, 75.01
+61.06	61.03
+64.12	61.03, 61.08, 64.11, 67.13
+67.04	61.08, 62.03
+71.23	61.03
+73.01	64.11, 67.02
+67.39	67.07
+65.30	62.03
+66.04	62.03
+67.18	67.04
+73.02	73.01
+66.05	66.04
+73.03	73.01
+73.04	64.13, 73.02
+73.05	67.04
+73.40	73.01, 73.02
+61.16	61.03, 61.08
+64.13	64.12
+67.12	64.12
+73.06	64.13, 73.07, 73.12
+73.07	73.02
+73.09	73.03, 73.05, 73.07
+73.10	73.09
+73.11	67.04
+73.12	67.04
+73.41	73.40
+73.00	140c, !73.99
+73.99	140c, !73.00, 73.09, 73.10, 73.40, 73.41
+
+[optativas]
+
+64.14	64.13
+64.15	64.13
+64.16	64.13
+67.23	120c
+67.38	67.02, 67.13
+67.61	61.08, 67.02
+68.03	
+68.08
+71.07	71.31
+71.31	73.02
+71.34	71.50, 71.51
+71.36	61.06, 73.07
+71.38	73.07
+71.50	71.31
+71.51	71.50
+72.06
+73.14	73.02
+73.15	73.05, 73.11, 73.12
+73.16	73.07
+77.01	73.01
+77.02	73.09
+78.01	!78.02, !78.03, !78.04, !78.05
+78.02	!78.01, !78.03, !78.04, !78.05
+78.03	!78.01, !78.02, !78.04, !78.05
+78.04	!78.01, !78.02, !78.03, !78.05
+78.05	!78.01, !78.02, !78.03, !78.04
+

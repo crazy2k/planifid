@@ -1,0 +1,127 @@
+# Archivo de descripción de la carrera Ingeniería en Alimentos
+# 22/3/2004 - Margarita Manterola <mamante@fi.uba.ar>
+
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# Se necesita con suma urgencia que alguien que estudie Ing. en Alimentos.
+# valide que la información aquí volcada es correcta.
+#
+# Si bien el plan de la carrera no es para nada claro, se toman los 
+# primeros 4 cuatrimestres idénticos a Ing. Química y de ahí en adelante
+# se vuelca la información que está en la página de la facultad.
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+# Nombre de la carrera:
+carrera = Ingeniería en Alimentos 
+
+# Cantidad de créditos total:
+creditos = 242
+
+# Si la carrera no requiere que el estudiante desarrolle una Tesis o Trabajo 
+# Profesional, el siguente valor debe ser 0:
+tiene_tesis = 1
+
+# A continuación se describe cómo se reparten los créditos.
+# Los valores que pueden ser definidos son:
+#
+#   creditos_obl	Cant. mínima de créditos en materias obligatorias
+#   creditos_obl_area	Cant. mínima de créditos en materias obligatorias
+#			del área elegida
+#   creditos_tesis	Cant. mínima de créditos en materias optativas del
+#			área elegida necesarios para realizar la tesis
+#   creditos_tprof	Idem para realizar el Trabajo Profesional
+#
+# La cantidad de créditos que falta para llegar al valor total se supone que
+# se asignan en materias optativas libres.
+
+creditos_obl = 216
+#creditos_obl_area = 28
+#creditos_tesis = 4
+#creditos_tprof = 32
+
+#=============================================================================
+# Lista de materias
+#
+# La sintaxis para definir una materia es:
+#
+# 	COD	CORR1, CORR2, ...
+#
+# Las correlativas se especifican con una lista de requisitos separados por 
+# comas. Los requisitos pueden ser:
+#
+#   	xx.xx		El código de una materia. Ej: 61.09
+#	!xx.xx		Una materia que NO debe estar aprobada. Ej: !75.28
+#	xxm		Cantidad mínima de materias aprobadas. Ej: 20m
+#	xxxc		Cantidad mínima de créditos. Ej: 140c
+#
+# Las siguientes declaraciones indican las propiedades de las materias que
+# se mencionen a partir de esa línea:
+#
+# 	[obligatorias]
+#	[optativas]
+#	[area COD Nombre del Area u Orientación]
+#
+# donde COD debe ser un código que identifique al área de la carrera, o 
+# 0 para indicar que las materias que siguen no pertenecen a ningún área.
+
+[obligatorias]
+
+61.03
+62.01
+63.02
+61.08
+62.04	61.03, 62.01
+63.03	63.02
+75.01
+63.04	63.02
+75.12	61.03, 61.08, 75.01
+76.01	61.03, 61.08, 62.01, 63.02, 75.01
+61.14	61.03, 61.08
+63.06	62.04, 63.02
+76.02	76.01
+63.07	63.06
+76.03	61.14, 76.01
+76.12	63.04
+76.40	63.04
+76.04	76.03
+76.05	63.06, 76.03
+00.11	76.03, 76.12, 76.40
+63.05	63.03
+65.43	76.05
+00.12	00.11, 76.40
+00.13	00.11
+76.08	63.07, 75.12, 76.05
+76.42	76.05
+77.41	76.05
+01.01	00.11
+00.14	00.11, 63.05
+71.55	00.13
+76.41	76.08
+00.15	00.11, 63.05
+76.43	76.04, 76.05
+76.90
+76.44
+01.02	76.40
+71.56	01.01, 71.55
+
+[optativas]
+
+61.06	61.03
+00.16	76.12
+00.17	00.13
+02.01	00.15
+00.18	00.13
+71.31	00.13, 71.55
+71.43	00.13, 71.55
+71.33	00.13, 71.55
+72.14	00.13, 71.55
+71.44	01.01, 71.55
+71.03	61.06
+76.19	76.41
+01.03	71.55
+71.57	61.14
+78.01	!78.02, !78.03, !78.04, !78.05
+78.02	!78.01, !78.03, !78.04, !78.05
+78.03	!78.01, !78.02, !78.04, !78.05
+78.04	!78.01, !78.02, !78.03, !78.05
+78.05	!78.01, !78.02, !78.03, !78.04
+

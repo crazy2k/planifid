@@ -1,0 +1,158 @@
+# Archivo de descripción de la carrera Ingeniería Civil
+# 22/3/2004 - Margarita Manterola <mamante@fi.uba.ar>
+
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# Se necesita con suma urgencia que alguien que estudie Ing. Civil
+# valide que la información aquí volcada es correcta.
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+# Nombre de la carrera:
+carrera = Ingeniería Civil
+
+# Cantidad de créditos total:
+creditos = 240
+
+# Si la carrera no requiere que el estudiante desarrolle una Tesis o Trabajo 
+# Profesional, el siguente valor debe ser 0:
+tiene_tesis = 1
+
+# A continuación se describe cómo se reparten los créditos.
+# Los valores que pueden ser definidos son:
+#
+#   creditos_obl	Cant. mínima de créditos en materias obligatorias
+#   creditos_obl_area	Cant. mínima de créditos en materias obligatorias
+#			del área elegida
+#   creditos_tesis	Cant. mínima de créditos en materias optativas del
+#			área elegida necesarios para realizar la tesis
+#   creditos_tprof	Idem para realizar el Trabajo Profesional
+#
+# La cantidad de créditos que falta para llegar al valor total se supone que
+# se asignan en materias optativas libres.
+
+creditos_obl = 164
+#creditos_obl_area = 30
+creditos_tesis = 30 # (entre 30 y 36)
+#creditos_tprof = 32
+
+#=============================================================================
+# Lista de materias
+#
+# La sintaxis para definir una materia es:
+#
+# 	COD	CORR1, CORR2, ...
+#
+# Las correlativas se especifican con una lista de requisitos separados por 
+# comas. Los requisitos pueden ser:
+#
+#   	xx.xx		El código de una materia. Ej: 61.09
+#	!xx.xx		Una materia que NO debe estar aprobada. Ej: !75.28
+#	xxm		Cantidad mínima de materias aprobadas. Ej: 20m
+#	xxxc		Cantidad mínima de créditos. Ej: 140c
+#
+# Las siguientes declaraciones indican las propiedades de las materias que
+# se mencionen a partir de esa línea:
+#
+# 	[obligatorias]
+#	[optativas]
+#	[area COD Nombre del Area u Orientación]
+#
+# donde COD debe ser un código que identifique al área de la carrera, o 
+# 0 para indicar que las materias que siguen no pertenecen a ningún área.
+
+[obligatorias]
+
+61.03
+61.08
+70.03
+61.06
+62.01
+63.01
+75.01
+62.03	61.03, 62.01
+64.01	61.03, 62.01
+70.29	62.01, 70.03
+75.12	61.03, 61.08, 75.01
+64.02	61.08, 64.01
+69.01	61.03, 62.01
+64.03	63.01, 64.02
+64.07	64.02
+65.05	61.08, 62.03
+71.23	61.03
+64.08	64.02
+74.01	64.03, 64.07
+68.07	70.29, 71.23
+71.11	71.23, 74.01, 74.04
+71.21	120c
+74.04	62.03, 64.03, 64.02, 65.05
+74.05	74.01, 64.08
+74.11	64.08, 74.01
+77.09	71.11
+64.00	140c, !74.99, !68.99, !69.99
+74.99	140c, !64.00, !68.99, !69.99
+68.99	140c, !64.00, !74.99, !69.99
+69.99	140c, !64.00, !68.99, !74.99
+
+[optativas]
+
+61.12	61.03, 61.08
+64.10	64.07
+64.14	64.07
+64.16	64.07
+64.17	61.06, 64.07, 64.03, 75.12
+64.18	61.06, 64.10, 75.12
+64.19	61.12, 64.18
+67.04	62.03, 61.08
+69.02	69.01
+69.04	69.01
+69.11	69.01
+74.03	100c
+74.07	62.03, 65.05, 74.04
+74.08	69.04, 74.01, 74.11
+74.09	74.04
+74.10	74.03
+74.21	64.03, 74.01
+78.01	!78.02, !78.03, !78.04, !78.05
+78.02	!78.01, !78.03, !78.04, !78.05
+78.03	!78.01, !78.02, !78.04, !78.05
+78.04	!78.01, !78.02, !78.03, !78.05
+78.05	!78.01, !78.02, !78.03, !78.04
+
+#=============================================================================
+[area CONS Construcciones y Estructuras]
+
+[optativas]
+74.12	64.03, 64.07
+74.13	74.12
+74.14	64.02, 64.03
+74.15	74.01, 74.04
+74.16	64.03, 64.07, 74.12
+74.17	74.04, 74.05
+74.18	64.08, 74.01
+74.19	74.12, 74.18
+
+#=============================================================================
+[area HIDR Hidráulica]
+
+[optativas]
+69.05	69.01
+69.06	69.01
+69.07	69.01
+69.08	69.01
+69.09	69.01
+69.10	69.01
+
+
+#=============================================================================
+[area TRAN Transporte]
+
+[optativas]
+
+68.01	68.02
+68.02	68.07
+68.03	64.08, 69.01, 68.07
+68.04	64.08, 68.02
+68.05	64.08, 68.07
+68.08	68.07
+68.09	68.07
+68.10	140c
+
