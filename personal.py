@@ -15,6 +15,8 @@ class Personal:
 	"Representa la informacion personal y el estado de una carrera"
 	def __init__(self):
 		self.username = ''
+		self.nombre = ''
+		self.padron = ''
 		self.password = ''
 		self.carrera = ''
 		self.aprobadas = {}		# { 'CODIGO': nota, ... }
@@ -34,6 +36,8 @@ class Personal:
 		"Convierte la informacion personal en un diccionario"
 		d = {}
 		d['username'] = self.username
+		d['nombre'] = self.nombre
+		d['padron'] = self.padron
 		d['carrera'] = self.carrera
 		d['aprobadas'] = self.aprobadas
 		d['cursando'] = self.cursando
@@ -45,6 +49,8 @@ class Personal:
 
 	def fromdict(self, d):
 		"De un diccionario acomoda la informacion personal"
+		self.nombre = d['nombre']
+		self.padron = d['padron']
 		self.carrera = d['carrera']
 		self.area = d['area']
 		self.hace_tesis = d['hace_tesis']
