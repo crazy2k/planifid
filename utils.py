@@ -5,15 +5,17 @@ Varias funciones utiles.
 
 import string
 
+permitidos = string.ascii_letters + string.digits + '-_.'
+
 def clean(s):
-	"Deja en el string s solo las letras, los numeros y '-', '_' y '.'"
+	"Deja en el string s solo los caracteres permitidos"
 	v = ''
+	count = 0
 	for i in s:
-		if i in string.ascii_letters:
+		if count == 20:
+			break
+		if i in permitidos:
 			v += i
-		if i in '0123456789':
-			v += i
-		if i in '-_.':
-			v += i
+			count++
 	return v
 
