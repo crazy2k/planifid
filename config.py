@@ -5,7 +5,7 @@ Archivo de configuracion del planifid
 
 # directorio base para los datos, y donde se almacena la informacion de las
 # carreras y las materias
-datadir = "/usr/local/planifi/data"
+datadir = "./data"
 
 # address y port donde esperar conexiones; si el address es el string vacio,
 # espera en todas las ips
