@@ -7,7 +7,9 @@ Para ahora
 * revisar los creditos (obtencion, etc.)
 * get_estado_materias() acepte multiples materias (o todas)
 * keepalive para las sesiones (devuelve el ttl de la sesion)
-
+* obtener datos de la carrera (cant. de creditos, creditos en oblig., etc.)
+* calculo del promedio
+* nombre dentro de datos personales
 
 Para mas adelante
 * soporte de equivalencias
