@@ -97,9 +97,8 @@ def register(username, password):
 def auth(username, password):
 	"""Autentica un usuario, devuelve un string con el session ID, o un
 	string vacio si hubo un error de autenticacion."""
-	#try:
-	p = get_personal(username)
 	try:
+		p = get_personal(username)
 		if p.password != password:
 			raise
 	except:
