@@ -207,7 +207,10 @@ def set_estado_materia(sid, materia, estado):
 def get_aprobadas(sid):
 	"Devuelve un diccionario con las materias aprobadas"
 	p = _sid2per(sid)
-	return p.aprobadas
+	d = {}
+	for cod in p.aprobadas:
+		d[cod] = (p.aprobadas[cod], materias[cod].desc)
+	return d
 
 def get_cursando(sid):
 	"Devuelve un diccionario con las materias que se estan cursando"

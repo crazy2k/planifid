@@ -82,7 +82,7 @@ set_estado_materia(sid, materia, estado):
 
 get_aprobadas(sid):
 	Devuelve un diccionario con las materias aprobadas, cuya clave es el
-	codigo de materia y el valor es la descripcion de la misma.
+	codigo de materia y el valor es una tupla (nota, descripcion).
 
 get_cursando(sid):
 	Devuelve un diccionario con las materias que se estan cursando.
