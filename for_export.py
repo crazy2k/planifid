@@ -184,6 +184,7 @@ def set_estado_materia(sid, materia, estado):
 	# TODO: calcular el promedio (que es irreal, no contamos los aplazos,
 	# vale la pena?)
 	p = _sid2per(sid)
+	estado = int(estado)
 	if not carreras[p.carrera].materias.has_key(materia):
 		return 0
 	if estado >= 0:
