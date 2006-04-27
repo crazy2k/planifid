@@ -103,10 +103,10 @@ def get_correlativas(carrera, materia):
 		d[cod] = materias[cod].desc
 	return d
 
-def get_info_materia(cod):
-	mat = materias[cod]
+def get_info_materia(carrera, materia):
+	mat = carreras[carrera].materias[materia]
 	d = dict(
-		codigo= cod,
+		codigo = materia,
 		desc = mat.desc,
 		creditos = mat.creditos,
 		dep = mat.dep

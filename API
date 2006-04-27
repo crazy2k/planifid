@@ -29,7 +29,8 @@ get_correlativas(carrera, materia):
 	Devuelve un diccionario { 'COD': 'Descripcion', ... } de las materias
 	correlativas completas a la dada.
 
-get_info_materia(materia):
+get_info_materia(carrera, materia):
+	carrera: Codigo de la carrera.
 	materia: Codigo de la materia de la cual obtener los datos.
 	Devuelve un diccionario:
 	{	'codigo': 'COD',
