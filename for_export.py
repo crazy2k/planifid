@@ -103,6 +103,15 @@ def get_correlativas(carrera, materia):
 		d[cod] = materias[cod].desc
 	return d
 
+def get_info_materia(cod):
+	mat = materias[cod]
+	d = dict(
+		codigo= cod,
+		desc = mat.desc,
+		creditos = mat.creditos,
+		dep = mat.dep
+	)
+	return d
 
 # funciones personales
 
@@ -241,6 +250,7 @@ list = [
 	get_areas,
 	get_materias,
 	get_correlativas,
+	get_info_materia,
 	keepalive,
 	get_personal,
 	set_personal,
