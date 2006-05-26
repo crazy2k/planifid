@@ -38,6 +38,9 @@ get_info_materia(carrera, materia):
 		'creditos': NRO_DE_CREDITOS,
 		'dep': ['COD_DEP1', 'COD_DEP2', ...]
 	}
+	Donde "dep" es una lista con los códigos de las correlativas
+	inmediatas de la materia.
+
 
 
 Las privadas
