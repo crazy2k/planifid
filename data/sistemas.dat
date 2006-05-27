@@ -1,7 +1,8 @@
 # Archivo de descripción de la carrera de Análisis de Sistemas
-# 15/03/2004 - Diego Essaya <dessaya@fi.uba.ar>
+# 10/3/2006 - Germán Bassi <germanbassi@gmail.com>
+# 15/3/2004 - Diego Essaya <dessaya@fi.uba.ar>
 
-# Nobbre de la carrera:
+# Nombre de la carrera:
 carrera = Licenciatura en Análisis de Sistemas
 
 # Cantidad de créditos total:
@@ -79,13 +80,14 @@ creditos_obl = 128
 75.18	71.13, 71.16, 75.17
 
 [optativas]
+
 71.17
 71.18
 71.20	71.15
 71.46	71.13
 75.12	61.03, 61.08, 75.41
 75.14	61.07
-75.16	75.07, 75.08, 75.14
+75.16	75.14
 75.19	75.08
 75.20	75.08
 75.22	75.08

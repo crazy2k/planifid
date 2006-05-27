@@ -1,4 +1,5 @@
 # Archivo de descripción de la carrera Ingeniería Civil
+# 8/3/2006 - Germán Bassi <germanbassi@gmail.com>
 # 22/3/2004 - Margarita Manterola <mamante@fi.uba.ar>
 
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -64,7 +65,7 @@ creditos_tesis = 30 # (entre 30 y 36)
 61.03
 61.08
 70.03
-61.06
+61.06	61.03
 62.01
 63.01
 75.01

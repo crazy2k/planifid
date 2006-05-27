@@ -2,6 +2,10 @@
 
 # Materias de la Facultad de Ingeniería
 #
+# 8/3/2006 - Germán Bassi <germanbassi@gmail.com>
+# Actualización de las materias de las diversas carreras, en especial
+# de la carrera de Ing. Electrónica; y correción de algunos errores.
+#
 # 22/3/2004 - Margarita Manterola <mamante@fi.uba.ar>
 # Listado completo de materias para las carreras dictadas en la 
 # Facultad de Ingeniería.
@@ -22,7 +26,7 @@
 61.07	Matemática Discreta				6
 61.08	Algebra II A					8
 61.09	Probabilidad y Estadística B			6
-61.10	Análisis Matemático III A			6
+61.10	Análisis Matemático III A			6 #industrial 8cred; electro, info y electri 6cred
 61.12	Análisis Matemático III B			6
 61.13	Análisis Matemático III C			4
 61.14	Matemática especial para Ingeniería Química	8
@@ -40,62 +44,62 @@
 62.05	Física III				10
 62.06	Mecánica I				6
 62.07	Mecánica II				4
-62.08	Electromagnetismo A		6
+62.08	Electromagnetismo A			6
 62.09	Electromagnetismo B			6
 62.10	Física del Estado Sólido		4
 62.11	Mecánica Racional			4
 62.13	Física III C				6
 62.15	Física III D				4
-62.18	Física de Fluidos			6
+62.18	Física de Fluidos			4
 
 # Departamento de Química
-63.01	Química					6
-63.02	Química I				8
-63.03	Química II				8
-63.04	Química III				10
+63.01	Química				6
+63.02	Química I			8
+63.03	Química II			8
+63.04	Química III			10
 63.05	Química Analítica		8
 63.06	Química Física I		8
 63.07	Química Física II		6
-63.08	Análisis Instrumental	8
+63.08	Análisis Instrumental		8
 63.09	Química Orgánica Especial	8
 63.10	Termodinámica Estadística	6
-63.11	Química Aplicada A			6
+63.11	Química Aplicada A		6
 
 # Departamento de Estabilidad
-64.00	Tesis de Ingeniería Civil				24
-64.01	Estabilidad I  A						8
-64.02	Estabilidad II A						8
+64.00	Tesis de Ingeniería Civil			24
+64.01	Estabilidad I A					8
+64.02	Estabilidad II A				8
 64.03	Comportamiento de Materiales			8
-64.04	Estática y Resistencia de Materiales A	8
-64.05	Estática y Resistencia de Materiales B	6
-64.07	Estabilidad III A						8
-64.08	Mecánica de Suelos						6
-64.10	Estabilidad IV							8
+64.04	Estática y Resistencia de Materiales A		8
+64.05	Estática y Resistencia de Materiales B		6
+64.07	Estabilidad III A				8
+64.08	Mecánica de Suelos				6
+64.10	Estabilidad IV					8
 64.11	Estabilidad I B					6
 64.12	Estabilidad II B				8
 64.13	Estabilidad III B				6
-64.14	Método de los Elementos Finitos		4
-64.15	Estabilidad IV B					6
-64.16	Análisis Experimental de Tensiones	2
-64.17	Seguridad Estructural					2
+64.14	Método de los Elementos Finitos			4
+64.15	Estabilidad IV B				6
+64.16	Análisis Experimental de Tensiones		2
+64.17	Seguridad Estructural				2
 64.18	Dinámica de las Estructuras I			4
 64.19	Dinámica de las Estructuras II			3
 
 # Departamento de Electrotecnia
-65.00	Tesis de Ingeniería Electricista			18
-65.01	Electrotecnia								8
-65.03	Electrotecnia General A						8
-65.04	Electrotecnia General B						6
-65.05	Electrotecnia General C						4
-65.06	Máquinas Eléctricas							6
-65.09	Teoría de Circuitos							6
-65.10	Teoría de Campos							6
-65.11	Tecnología de Materiales I					6
-65.12	Tecnología de Materiales II					4
-65.13	Teoría de Máquinas Eléctricas I				8
-65.14	Teoría de Máquinas Eléctricas II			6
-65.15	Sistemas Eléctricos de Potencia				4
-65.16	Trans. y Distrib. de la Energía Eléctrica	6
+65.00	Tesis de Ingeniería Electricista		18
+65.01	Electrotecnia					8
+65.03	Electrotecnia General A				8
+65.04	Electrotecnia General B				6
+65.05	Electrotecnia General C				4
+65.06	Máquinas Eléctricas				6
+65.09	Teoría de Circuitos				6
+65.10	Teoría de Campos				6
+65.11	Tecnología de Materiales I			6
+65.12	Tecnología de Materiales II			4
+65.13	Teoría de Máquinas Eléctricas I			8
+65.14	Teoría de Máquinas Eléctricas II		6
+65.15	Sistemas Eléctricos de Potencia			4
+65.16	Trans. y Distrib. de la Energía Eléctrica	4
 65.17	Centrales Eléctricas				4
 65.21	Accionamientos					4
 65.22	Apl. Industriales de la Energía Eléctrica	6
@@ -111,28 +115,28 @@
 65.39	Metrología y Téc. de Calibración Eléctr.	4
 65.40	Uso eficiente de la Energía Eléctrica		4
 65.41	Estaciones Transform. y de Distribución		4
-65.42	Sistemas de Protecciones Eléctricas			4
-65.43	Ingeniería de las Instalaciones I			6
-65.44	Sistemas de Energía							4
-65.45	Regulación de Servicios Públicos			4
-65.46	Energía Eólica, Hidráulica y Marina			4
-65.47	Energía Solar, Geotérmica y Biomasa			4
+65.42	Sistemas de Protecciones Eléctricas		4
+65.43	Ingeniería de las Instalaciones I		6
+65.44	Sistemas de Energía				4
+65.45	Regulación de Servicios Públicos		4
+65.46	Energía Eólica, Hidráulica y Marina		4
+65.47	Energía Solar, Geotérmica y Biomasa		4
 65.99	Trabajo Profesional de Ing. Electricista	12
 
 # Departamento de Electrónica
 66.00	Tesis de Ingeniería Electrónica			24
-66.01	Técnicas Digitales				6
+66.01	Técnica Digital					6
 66.02	Laboratorio					6
 66.03	Electrónica General				4
 66.04	Electrónica I					8
 66.05	Electrónica II					6
 66.06	Análisis de Circuitos				10
-66.07	Señales y Sistemas				8
+#66.07	Señales y Sistemas				8
 66.08	Circuitos Electrónicos I			8
 66.09	Laboratorio de Microcomputadoras		6
 66.10	Circuitos Electrónicos II			8
 66.12	Introducción a Proyectos			4
-66.15	Procesos Estocásticos				4
+#66.15	Procesos Estocásticos				4
 66.17	Sistemas Digitales				6
 66.18	Teoría de Control I				6
 66.19	Circuitos de Pulsos				6
@@ -150,13 +154,13 @@
 66.31	Identificación y Control Adaptativo		6
 66.32	Robótica					6
 66.33	Laboratorio de Sistemas Digitales		6
-66.34	Comunicaciones Digitales I			6
+#66.34	Comunicaciones Digitales I			6
 66.35	Técnica Digital Avanzada			6
-66.37	Laboratorio de Comunicaciones II		6
+#66.37	Laboratorio de Comunicaciones II		6
 66.38	Procesamiento de Señales I			6
 66.39	Procesamiento de Señales II			6
-66.40	Sistemas de Microondas				6
-66.41	Televisión					6
+#66.40	Sistemas de Microondas				6
+#66.41	Televisión					6
 66.42	Comunicaciones Digitales II			6
 66.43	Ingeniería Biomédica				6
 66.44	Instrumentos Electrónicos			6
@@ -168,12 +172,12 @@
 66.50	Tecnología de los Componentes			6
 66.51	Teoría de Detección y Estimación		6
 66.53	Instr. y Control de Procesos			6
-66.54	Antenas						4
+#66.54	Antenas						4
 66.55	Simulación de Sist. de Control			4
 66.56	Control Óptimo					6
 66.57	Optoelectrónica					4
-66.58	Transmisión y Recepción de Comunicac.		4
-66.59	Sistemas de Comunicaciones			4
+#66.58	Transmisión y Recepción de Comunicac.		4
+#66.59	Sistemas de Comunicaciones			4
 66.61	Tecnología de Circuitos Integrados		6
 66.62	Redes de Computadoras				6
 66.63	Redes Neuronales				6
@@ -185,6 +189,19 @@
 66.69	Criptografía y Seguridad Informática		6
 66.70	Estructura del Computador			6
 66.71	Sistemas Gráficos				6
+#materias agregadas por German
+66.72	Señales e Imágenes en Biomedicina		6
+66.73	Instalaciones e Instrumentación Biomédica	6
+66.74	Señales y Sistemas				6
+66.75	Procesos Estocásticos				6
+66.76	Transmisión y Recepción de Comunicac.		6
+66.77	Sistemas de Comunicaciones			6
+66.78	Comunicaciones Digitales y Analógicas		6
+66.79	Laboratorio de Comunicaciones			6
+66.80	Sistemas de Microondas				6
+66.81	Video y Redes de Cable				6
+66.82	Propagación y Sistemas Irradiantes		6
+#fin de agregado
 66.99	Trabajo Profesional				12
 
 # Departamento de Ingeniería Mecánica
@@ -233,9 +250,9 @@
 67.48	Tratamientos Térmicos				4
 67.49	Metalurgia Física				6
 67.50	Materiales Ferrosos y sus Aplicaciones		4
-67.51	Máquinas Térmicas							4
-67.52	Termodinámica B								4
-67.56	Técnicas Energéticas						4
+67.51	Máquinas Térmicas				4
+67.52	Termodinámica B					4
+67.56	Técnicas Energéticas				4
 67.57	Elem. Finitos Avanz. en la Mec. de Fluidos	6
 67.58	Intr. al Método de los Elementos Finitos	6
 67.59	Mecánica del Continuo				6
@@ -246,103 +263,104 @@
 67.99	Trabajo Profesional de Ing. Mecánica B		14
 
 # Departamento de Transporte
-68.01	Construcción de Carreteras			6
+68.01	Construcción de Carreteras		6
 68.02	Diseño y Operación de Caminos		6
-68.03	Puertos y Vías Navegables			6
-68.04	Ferrocarriles						6
-68.05	Aeropuertos							6
-68.06	Transporte A						8
-68.07	Ingeniería del Transporte			6
-68.08	Planeamiento del Transporte			6
-68.09	Tránsito							4
-68.10	Ingeniería Territorial				4
-68.11	Ordenamiento Rural y Urbano			4
-68.99	Trabajo Prof. de Ing. Civil (Tran)	12
+68.03	Puertos y Vías Navegables		6
+68.04	Ferrocarriles				6
+68.05	Aeropuertos				6
+68.06	Transporte A				8
+68.07	Ingeniería del Transporte		6
+68.08	Planeamiento del Transporte		6
+68.09	Tránsito				4
+68.10	Ingeniería Territorial			4
+68.11	Ordenamiento Rural y Urbano		4
+68.99	Trabajo Prof. de Ing. Civil (Transp.)	12
 
 # Departamento de Hidráulica
-69.01	Hidráulica General						8
-69.02	Ingeniería Sanitaria					6
-69.03	Mecánica de los Fluídos A				6
-69.04	Hidráulica Aplicada						6
-69.05	Centrales Hidráulicas					6
-69.06	Modelos Hidráulicos						4
-69.07	Hidrología								6
+69.01	Hidráulica General				8
+69.02	Ingeniería Sanitaria				6
+69.03	Mecánica de los Fluídos A			6
+69.04	Hidráulica Aplicada				6
+69.05	Centrales Hidráulicas				6
+69.06	Modelos Hidráulicos				4
+69.07	Hidrología					6
 69.08	Planific. de Recursos Hidráulicos		4
 69.09	Hidráulica Fluvial y Marítima			6
-69.10	Construcciones Hidráulicas				4
-69.11	Gestión Ambiental de Recursos Hidrícos	4
-69.99	Trabajo Prof. de Ing. Civil (Hidr)		12
+69.10	Construcciones Hidráulicas			4
+69.11	Gestión Ambiental de Recursos Hidrícos		4
+69.99	Trabajo Prof. de Ing. Civil (Hidrául.)		12
 
 # Departamento de Agrimensura y Geodesia
-70.02	Geometría Descriptiva					6
-70.03	Medios de Representación A				6
-70.04	Dibujo Topográfico						4
-70.06	Geografía Física y Geología				4
-70.07	Cálculo de Compensación					6
-70.08	Topografía I							6
-70.09	Topografía II							6
-70.11	Topografía III							16
-70.12	Geodesia I								6
-70.14	Fotogrametría I							8
-70.13	Geodesia II								6
-70.15	Cartografía								6
-70.16	Fotogrametría II						4
-70.17	Geodesia III							6
-70.18	Catastro y Valuaciones					6
-70.19	Levantamiento y Práctica Profesional	10
-70.20	Fotointerpretación						4
+70.02	Geometría Descriptiva				6
+70.03	Medios de Representación A			6
+70.04	Dibujo Topográfico				4
+70.06	Geografía Física y Geología			4
+70.07	Cálculo de Compensación				6
+70.08	Topografía I					6
+70.09	Topografía II					6
+70.11	Topografía III					16
+70.12	Geodesia I					6
+70.14	Fotogrametría I					8
+70.13	Geodesia II					6
+70.15	Cartografía					6
+70.16	Fotogrametría II				4
+70.17	Geodesia III					6
+70.18	Catastro y Valuaciones				6
+70.19	Levantamiento y Práctica Profesional		10
+70.20	Fotointerpretación				4
 70.24	Levantamientos Hidrográficos			4
 70.26	Hidráulica Agrícola y Saneamiento		4
-70.27	Catastro								4
-70.29	Topografía y Geodesia					6
-70.30	Intr. a los Sist. de Inf. Geográfica	6 
-70.31	Información Rural						6
+70.27	Catastro					4
+70.29	Topografía y Geodesia				6
+70.30	Intr. a los Sist. de Inf. Geográfica		6 
+70.31	Información Rural				6
+70.32	Sistemas de Información Geográfica		4 #agregado por German
 
 # Departamento de Economía, Organización y Legal
-71.01	Introducc. a la Economía y Org. Empresa	4
-71.02	Agrimensura Legal I						4
-71.03	Estadística Técnica						6
-71.04	Organización Industrial I		4
-71.05	Organización Industrial II		4
-71.06	Estructura Económica Argentina			6
-71.07	Investigación Operativa			4
-71.08	Organización Industrial III				6
-71.11	Organización de Obras					6
-71.12	Estructura de las Organizaciones	6
-71.13	Información en las Organizaciones	6
-71.14	Modelos y Optimización I		6
-71.15	Modelos y Optimización II		6
-71.16	Administración de Proyectos		6
-71.17	Derecho Informático			4
-71.18	Estructura Económica Argentina		4
-71.20	Modelos y Optimización III		6
+71.01	Introducc. a la Economía y Org. Empresa		4
+71.02	Agrimensura Legal I				4
+71.03	Estadística Técnica				6
+71.04	Organización Industrial I			4
+71.05	Organización Industrial II			4
+71.06	Estructura Económica Argentina			6 #electri 4cred; industrial 6cred
+71.07	Investigación Operativa				4 #electro 4cred; industrial y naval 8cred
+71.08	Organización Industrial III			6
+71.11	Organización de Obras				6
+71.12	Estructura de las Organizaciones		6
+71.13	Información en las Organizaciones		6
+71.14	Modelos y Optimización I			6
+71.15	Modelos y Optimización II			6
+71.16	Administración de Proyectos			6
+71.17	Derecho Informático				4
+71.18	Estructura Económica Argentina			4
+71.20	Modelos y Optimización III			6
 71.21	Leg. y Ej. Prof. de la Ing. Civil		6
-71.22	Leg. y Ej. Prof. de la Ing. Industrial	4
-71.23	Economía				4
-71.24	Agrimensura Legal II					4
-71.25	Leg. y Ej. Prof. de la Ing. Mecánica	2
-71.27	Leg. y Ej. Prof. de la Ing. Electrónica	4
+71.22	Leg. y Ej. Prof. de la Ing. Industrial		4
+71.23	Economía					4
+71.24	Agrimensura Legal II				4
+71.25	Leg. y Ej. Prof. de la Ing. Mecánica		2
+71.27	Leg. y Ej. Prof. de la Ing. Electrónica		4
 71.28	Leg. y Ej. Prof. de la Ing. Química		4
-71.30	Agrimensura Legal III					6
-71.31	Organización de la Producción		6
+71.30	Agrimensura Legal III				6
+71.31	Organización de la Producción			6
 71.32	Investigación Operativa Superior		4
 71.33	Comercializ. de Productos Industriales		4
 71.34	Gestión Presupuestaria				4
 71.35	Estadística Técnica Superior			6
-71.36	Gestión de Calidad			4
-71.37	Dirección de Manufactura				6
-71.38	Legislación General						4
-71.39	Leg. y Ej. Prof. de la Ing. Electricista B		4
-71.40	Leg. y Ej. Prof. de la I. Informática		4
-71.41	Análisis y Resolución de Problemas	6
-71.42	Circuitos de Información de la Empresa	4
-71.43	Logística Integral						4
-71.44	Recursos Humanos			4
-71.45	Informática p/la Gestión de Empresas	4
-71.46	Ingeniería Económica 			6
-71.50	Ingeniería Económica I					4
-71.51	Ingeniería Económica II					4
-71.55	Economía de la Empresa Alimentaria			6
+71.36	Gestión de Calidad				4
+71.37	Dirección de Manufactura			6
+71.38	Legislación General				4
+71.39	Leg. y Ej. Prof. de la Ing. Electricista B	4
+71.40	Leg. y Ej. Prof. de la Ing. Informática		4
+71.41	Análisis y Resolución de Problemas		6
+71.42	Circuitos de Información de la Empresa		4
+71.43	Logística Integral				4
+71.44	Recursos Humanos				4
+71.45	Informática p/la Gestión de Empresas		4
+71.46	Ingeniería Económica 				6
+71.50	Ingeniería Económica I				4
+71.51	Ingeniería Económica II				4
+71.55	Economía de la Empresa Alimentaria		6
 71.56	Leg. y Ej. Prof. de la Ing. en Alimentos	2
 71.57	Mét. Cuant. Apl. en Sist. Agroalimentarios	4
 
@@ -386,25 +404,25 @@
 73.99	Trabajo Profesional de Ing. Naval		0
 
 # Departamento de Construcciones y Estructuras
-74.01	Hormigón I								8
+74.01	Hormigón I					8
 74.03	Arquitectura y Planificación			8
-74.04	Construcciones							6
-74.05	Hormigón II								6
-74.07	Instalaciones de Edificios				6
-74.08	Presas									6
+74.04	Construcciones					6
+74.05	Hormigón II					6
+74.07	Instalaciones de Edificios			6
+74.08	Presas						6
 74.09	Maquinarias de la Construcción			4
-74.10	Urbanismo								6
-74.11	Cimentaciones							4
-74.12	Estructuras Metálicas I					6
-74.13	Estructuras Metálicas II				6
-74.14	Tecnología del Hormigón					4
+74.10	Urbanismo					6
+74.11	Cimentaciones					4
+74.12	Estructuras Metálicas I				6
+74.13	Estructuras Metálicas II			6
+74.14	Tecnología del Hormigón				4
 74.15	Patología de la Construcción			4
-74.16	Estructuras de Madera					4
-74.17	Sistemas Constructivos					4
-74.18	Sistemas Estructurales					6
-74.19	Diseño Estructural						6
-74.21	Inspecc. y Ejecu. de Estr. de Hormigón	6
-74.99	Trabajo Prof. de Ing. Civil (Constr.)	16
+74.16	Estructuras de Madera				4
+74.17	Sistemas Constructivos				4
+74.18	Sistemas Estructurales				6
+74.19	Diseño Estructural				6
+74.21	Inspecc. y Ejecu. de Estr. de Hormigón		6
+74.99	Trabajo Prof. de Ing. Civil (Constr.)		16
 
 # Departamento de Computación
 75.00	Tesis						24
@@ -459,92 +477,99 @@
 75.57	Modelos de Proceso de Desarrollo		4
 75.58	Eval. de Proyectos y Manejo de Riesgos		4
 75.59	Técnicas de Programación Concurrente I		6
-75.60	Sistemas Distribuidos I				4
+#75.60	Sistemas Distribuidos I				4
 75.61	Taller de Programación III			6
 75.62	Técnicas de Programación Concurrente II		4
 75.63	Sistemas Distribuidos II			4
 75.64	Sistemas Multimediales				4
 75.65	Manufactura Integrada p/Comp. (CIM) I		6
 75.66	Manufactura Integrada p/Comp. (CIM) II		6
-75.67	Sis. Autom. de Diag. y Det. de fallas I		6
+75.67	Sis. Autom. de Diag. y Det. de Fallas I		6
 75.68	Sist. de Soporte p/Celdas Prod. Flex.		4
-75.69	Sis. Autom. de Diag. y Det. de fallas I		6
+75.69	Sis. Autom. de Diag. y Det. de Fallas II	6
+75.70	Sist. de Prog. No Convencional de Robots	6 #agregada por German
 75.71	Seminario de Ing. en Informática I		3
 75.72	Seminario de Ing. en Informática II		3
+75.73	Arquitectura de Software			4 #agregada por German
+75.74	Sistemas Distribuidos I				4
 75.99	Trabajo Profesional				12
 
 # Departamento de Ingeniería Química
-76.00	Tesis de Ingeniería Química				24
+76.00	Tesis de Ingeniería Química			24
 76.01	Introducción a la Ing. Química I		8
 76.02	Introducción a la Ing. Química II		8
-76.03	Operaciones I							10
-76.04	Operaciones Unitarias II				8
-76.05	Operaciones Unitarias III				8
-76.08	Ingenieria de las Reacciones Químicas	8
-76.09	Instrum. y Contro de Plantas Químicas	8
+76.03	Operaciones I					10
+76.04	Operaciones Unitarias II			8
+76.05	Operaciones Unitarias III			8
+76.08	Ingenieria de las Reacciones Químicas		8
+76.09	Instrum. y Control de Plantas Químicas		8
 76.11	Análisis de Sistemas y Optimización		4
-76.12	Microbiología Industrial				6
-76.13	Bioingeniería Industrial				6
-76.16	Electroquímica							4
-76.17	Procesos Electroquímicos				4
-76.18	Fisicoquímica Especial					6
-76.19	Procesos Fermentativos					4
+76.12	Microbiología Industrial			6
+76.13	Bioingeniería Industrial			6
+76.16	Electroquímica					4
+76.17	Procesos Electroquímicos			4
+76.18	Fisicoquímica Especial				6
+76.19	Procesos Fermentativos				4
 76.20	Ing. de las Reacciones Químicas II		6
-76.22	Fundamentos de la Ing. de Reservorios	8
+76.22	Fundamentos de la Ing. de Reservorios		8
 76.23	Recuperación Asistida de Petróleo		4
-76.24	Fund. de la Sim. Numérica de Reservorio	6
-76.26	Evaluación de Proyectos					6
+76.24	Fund. de la Sim. Numérica de Reservorio		6
+76.26	Evaluación de Proyectos				6
 76.27	Control Estadístico de Procesos			6
-76.28	Gest. de Recur. de la Ind. de Procesos	4
-76.29	Industria de Procesos					4
-76.30	Industrias Alimenticias					4
+76.28	Gest. de Recur. de la Ind. de Procesos		4
+76.29	Industria de Procesos				4
+76.30	Industrias Alimenticias				4
 76.31	Simulación de Plantas Químicas B		6
+#materias agregadas por German (de la FCEN)
+76.32	Preservación de Alimentos			6
+76.33	Procesamiento Industrial de Alimentos		6
+#fin de agregado
 76.40	Introducción a la Bioquímica			2
-76.41	Biotecnología							4
-76.42	Ingeniería de las Instalaciones II B	4
-76.43	Instrumentación y Control				6
-76.50	Diseño de Procesos						6
-76.51	Introducción a la Planif. Interactiva	4
+76.41	Biotecnología					4
+76.42	Ingeniería de las Instalaciones II B		4
+76.43	Instrumentación y Control			6
+76.44	Práctica Profesional				4
+76.50	Diseño de Procesos				6
+76.51	Introducción a la Planif. Interactiva		4
 76.90	Tesis de Grado de Ing. en Alimentos		12
-76.44	Práctica Profesional					4
 76.99	Trabajo Profesional de Ing. Química		12
 
 # Departamento de Ingeniería del Ambiente y del Trabajo
 77.01	Higiene y Seguridad del Trabajo			4
 77.02	Introducción a la Ing. Ambiental		4
-77.05	Proyectos Nacionales e Ing. Ambiental	4
+77.05	Proyectos Nacionales e Ing. Ambiental		4
 77.07	Ing. de las Instalaciones II			10
 77.08	Seguridad Amb. y del Trabajo B			4
 77.09	Seguridad Amb. y del Trabajo A			4
-77.41	Gest. Ambiental de la Ind. Alimentaria	4
+77.41	Gest. Ambiental de la Ind. Alimentaria		4
 
 # Departamento de Idiomas
-78.01	Idioma Inglés					4
-78.02	Idioma Alemán					4
-78.03	Idioma Francés					4
-78.04	Idioma Italiano					4
-78.05	Idioma Portugués				4
+78.01	Idioma Inglés		4
+78.02	Idioma Alemán		4
+78.03	Idioma Francés		4
+78.04	Idioma Italiano		4
+78.05	Idioma Portugués	4
 
 # Materias de otras Facultades
 # 00.0X Ciencias Exactas - Computación
-00.01	Diseño de Compiladores			4
-00.02	Paradigmas del Lenguaje de Programación	4
-00.03	Lógicas Modales				4
+00.01	Diseño de Compiladores				4
+00.02	Paradigmas del Lenguaje de Programación		4
+00.03	Lógicas Modales					4
 # 00.1X Ciencias Exactas - Biología
-00.11	Fundamentos de la Preservación de Alimentos I	6
-00.12	Toxicología de Alimentos						4
-00.13	Fundamentos de la Preservación de Alimentos II	6
-00.14	Tecnología de Alimentos I						6
-00.15	Tecnología de Alimentos II						4
-00.16	Microbiología de Alimentos						6
-00.17	Tecnología de Alimentos III						4
-00.18	Análisis Avanzado de Alimentos					6
+00.11	Fundamentos de la Preservación de Alimentos I		6
+00.12	Toxicología de Alimentos				4
+00.13	Fundamentos de la Preservación de Alimentos II		6
+00.14	Tecnología de Alimentos I				6
+00.15	Tecnología de Alimentos II				4
+00.16	Microbiología de Alimentos				6
+00.17	Tecnología de Alimentos III				4
+00.18	Análisis Avanzado de Alimentos				6
 
 # 01.XX Farmacia y Bioquímica
-01.01	Legislación Alimentaria								2
+01.01	Legislación Alimentaria					2
 01.02	Nutrición Aplicada a Tecnología de Alimentos		2
 01.03	Gest. Cont. y Garan. de la Cal. en la Ind. Alim.	4
 
-# 02.XX Agronía
+# 02.XX Agronomía
 02.01	Sistemas de Prod. Agropecuara y Calidad de Alimentos	4
 
