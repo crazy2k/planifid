@@ -94,13 +94,22 @@ def get_correlativas(carrera, materia):
 		if i not in l:
 			l.append(i)
 	for i in l:
+		if ('!' in i) or ('m' in i) or ('c') in i:
+			continue
 		for j in get_correlativas(carrera, i):
 			if j not in l:
 				l.append(j)
 
 	d = {}
 	for cod in l:
-		d[cod] = materias[cod].desc
+		if '!' in cod:
+			d[cod] = materias[cod[1:]].desc
+		elif 'm' in cod:
+			d[cod] = '%s materias' % cod[:-1]
+		elif 'c' in cod:
+			d[cod] = '%s créditos' % cod[:-1]
+		else:
+			d[cod] = materias[cod].desc
 	return d
 
 def get_info_materia(carrera, materia):
