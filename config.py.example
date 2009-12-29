@@ -9,8 +9,8 @@ datadir = "./data"
 
 # address y port donde esperar conexiones; si el address es el string vacio,
 # espera en todas las ips
-addr = ''
-port = 8026
+addr = 'localhost'
+port = 8027
 
 # encoding en el cual estan almacenados los archivos de datos (en el tarball
 # oficial estan en latin1)
