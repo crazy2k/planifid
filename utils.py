@@ -19,3 +19,14 @@ def clean(s):
 			count += 1
 	return v
 
+
+def get_file_contents(fpath):
+	fd = open(fpath)
+	contents = fd.read()
+	fd.close()
+
+	return contents
+
+def add_path(path, fnames):
+	return [(os.path.join(path, fname), fname) for fname in fnames]
+
