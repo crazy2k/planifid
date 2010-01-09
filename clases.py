@@ -40,7 +40,7 @@ class Materia:
 		self.dep = []
 
 	def __repr__(self):
-		return '<materia: cod=%s desc="%s">' % (cod, desc)
+		return '<materia: cod=%s desc="%s">' % (self.cod, self.desc)
 
 	def correlativas(self):
 		"Devuelve la lista de correlativas"
