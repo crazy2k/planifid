@@ -13,15 +13,15 @@ import parsers
 import utils
 import personal
 
+
 # cargamos los datos comunes
 
-materias = parsers.parse_materias(config.datadir + '/materias.dat')
+import os
 
-carreras = {}
-for i in config.carreras.keys():
-	f = config.datadir + '/' + config.carreras[i]
-	carreras[i] = parsers.parse_carrera(f, materias)
+universities_path = os.path.join(config.datadir, 'universities/')
 
+data = {}
+parsers.dir_to_dict(universities_path, data)
 
 # funciones de la cuenta
 
@@ -49,15 +49,51 @@ def auth(username, password):
 
 # funciones comunes
 
-def get_carreras():
-	"""Devuelve un diccionario { 'COD': 'Descripcion', ... } de las
-	carreras disponibles"""
+def get_universidades():
+	unis = {}
+	for k, v in data.iteritems():
+		unis[k] = v['name']
+	
+	return unis
+
+def get_facultades(uni = ''):
+	facs = {}
+	if uni == '':
+		for uni_code, uni_value in data.iteritems():
+			for fac_code, fac_value in uni_value['faculties'].iteritems():
+				key = uni_code + '/' + fac_code
+				facs[key] = fac_value['name']
+	return facs
+		
+def get_carreras(uni = '', facultad = ''):
 	# FIXME: esto podria hacerse de forma estatica una sola vez, vale la
 	# pena?
-	d = {}
-	for cod in carreras.keys():
-		d[cod] = carreras[cod].desc
-	return d
+
+	cars = {}
+
+	if uni == '' and facultad == '':
+		for uni_code, uni_value in data.iteritems():
+			for fac_code, fac_value in uni_value['faculties'].iteritems():
+				for c_code, c_value in fac_value['programs'].iteritems():
+					key = uni_code + '/' + fac_code + '/' + c_code
+					cars[key] = c_value.desc
+
+	return cars
+
+def get_materias(uni = '', facultad = ''):
+	# FIXME: esto podria hacerse de forma estatica una sola vez, vale la
+	# pena?
+
+	mats = {}
+
+	if uni == '' and facultad == '':
+		for uni_code, uni_value in data.iteritems():
+			for fac_code, fac_value in uni_value['faculties'].iteritems():
+				for c_code, c_value in fac_value['courses'].iteritems():
+					key = uni_code + '/' + fac_code + '/' + c_code
+					mats[key] = c_value.desc
+
+	return mats
 
 def get_areas(carrera):
 	"""Devuelve un diccionario { 'COD': 'Descripcion', ... } de las areas
@@ -67,23 +103,24 @@ def get_areas(carrera):
 		d[area] = carreras[carrera].areas[area].desc
 	return d
 
-def get_materias(carrera, area):
-	"""Devuelve un diccionario { 'COD': 'Descripcion', ... } de las
-	materias de la carrera y el area dadas; si el area es un string vacio,
-	devuelve todas las materias de la carrera"""
-	# FIXME: idem anterior
-	if area:
-		listam = carreras[carrera].areas[area].materias
-	else:
-		listam = carreras[carrera].materias.keys()
+if False:
+	def get_materias(carrera, area):
+		"""Devuelve un diccionario { 'COD': 'Descripcion', ... } de las
+		materias de la carrera y el area dadas; si el area es un string vacio,
+		devuelve todas las materias de la carrera"""
+		# FIXME: idem anterior
+		if area:
+			listam = carreras[carrera].areas[area].materias
+		else:
+			listam = carreras[carrera].materias.keys()
 
-	d = {}
-	for cod in listam:
-		# Podriamos usar carreras[carrera].materias[cod]
-		# indistintamente, dado que sabemos que la descripcion es
-		# igual.
-		d[cod] = materias[cod].desc
-	return d
+		d = {}
+		for cod in listam:
+			# Podriamos usar carreras[carrera].materias[cod]
+			# indistintamente, dado que sabemos que la descripcion es
+			# igual.
+			d[cod] = materias[cod].desc
+		return d
 
 def get_correlativas(carrera, materia):
 	"""Devuelve un diccionario { 'COD': 'Descripcion', ... } de
@@ -256,6 +293,8 @@ def get_para_cursar(sid):
 list = [
 	auth,
 	register,
+	get_universidades,
+	get_facultades,
 	get_carreras,
 	get_areas,
 	get_materias,
