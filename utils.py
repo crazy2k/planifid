@@ -4,6 +4,7 @@ Varias funciones utiles.
 """
 
 import string
+import os
 
 permitidos = string.ascii_letters + string.digits + '-_.'
 
@@ -30,3 +31,9 @@ def get_file_contents(fpath):
 def add_path(path, fnames):
 	return [(os.path.join(path, fname), fname) for fname in fnames]
 
+def gen_key(*parts):
+	r = parts[0]
+	for p in parts[1:]:
+		r += '/' + p
+	
+	return r
