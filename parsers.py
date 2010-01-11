@@ -3,6 +3,7 @@
 # funciones que recorren el arbol de directorios
 
 import os
+import utils
 	
 def dir_to_dict(path, base_data = None, prev_base_data = None):
 
@@ -15,9 +16,9 @@ def dir_to_dict(path, base_data = None, prev_base_data = None):
 	_, dnames, fnames = os.walk(path).next()
 
 	# primero los archivos
-	for fpath, fname in add_path(path, fnames):
+	for fpath, fname in utils.add_path(path, fnames):
 		if fname in ['name']:
-			data[fname] = get_file_contents(fpath)
+			data[fname] = utils.get_file_contents(fpath)
 		elif fname == 'courses':
 			data[fname] = parse_materias(fpath)
 		elif os.path.basename(path) == 'programs':
@@ -25,7 +26,7 @@ def dir_to_dict(path, base_data = None, prev_base_data = None):
 				prev_base_data['courses'])
 	
 	# despues los directorios
-	for dpath, dname in add_path(path, dnames):
+	for dpath, dname in utils.add_path(path, dnames):
 		data[dname] = {}
 
 		dir_to_dict(dpath, data[dname], data)
