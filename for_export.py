@@ -2,7 +2,7 @@
 # coding: utf8
 
 """
-Funciones para exportar por XMLRPC
+Functions to be exported via XMLRPC
 """
 
 import time
@@ -14,7 +14,9 @@ import utils
 import personal
 
 
-# cargamos los datos comunes
+#
+# Common data loading
+#
 
 import os
 
@@ -23,19 +25,19 @@ universities_path = os.path.join(config.datadir, 'universities/')
 data = {}
 parsers.dir_to_dict(universities_path, data)
 
-# funciones de la cuenta
+#
+# Account related functions
+#
 
 def register(username, password):
-    """Registra el usuario y clave, devuelve:
-        0 si se registro exitosamente
-        1 si el usuario ya existe
-        2 si hubo otro problema
-    """
-    # TODO: si alguien molesta con esto, hay que armar un mecanismo para
-    # evitar DoS (tampoco es muy complicado).
+    """Register a username with its password.
+    
+    See personal.register to know what this returns.
 
-    username = utils.clean(username)
-    password = utils.clean(password)
+    """
+    # TODO: If someone bothers with this, a mechanism against DoS could
+    # be implemented (it isn't complicated, anyway)
+
     return personal.register(username, password)
 
 
