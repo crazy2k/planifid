@@ -60,28 +60,45 @@ class Personal:
 
 def load(username):
     "Devuelve un objeto Personal correspondiente al username"
+
     fd = open(config.personal.basedir + '/' + username)
     return pickle.load(fd)
 
 
-def register(username, password):
-    """Registra el usuario y clave, devuelve:
-        0 si se registro exitosamente
-        1 si el usuario ya existe
-        2 si hubo otro problema
-    """
-    username = utils.clean(username)
-    password = utils.clean(password)
-
-    # vemos si existe (medio feo, pero por ahora funciona, dependemos de
-    # que get_personal tira una excepcion si el usuario no existe)
-    p = None
+def isregistered(username):
     try:
         p = get_personal(username)
+        # if we get here, then username is registered
+        return True
     except:
-        pass
-    if p != None:
-        return 1
+        return False
+        
+
+def register(username, password):
+    """Return:
+        * (0, None) if registration succeeds,
+        * (1, None) if username already exists
+        * (2, <indication>) if there's a validation problem;
+          <indication> will be a list with 'username' and/or 'password'
+          as elements.
+        * (3, <reason>) if there's some other problem. <reason> will
+          tell what's the problem about.
+
+    """
+
+    # data validation
+    i = []  # i is the <indication>
+    if not utils.passes_filter(username):
+        i.append('username')
+
+        if utils.passes_filter(password):
+            i.append('password')
+
+        return (2, i)
+
+    # we see whether the username is already registered
+    if isregistered(username):
+        return (1, None)
 
     p = Personal()
     p.username = username
@@ -90,8 +107,9 @@ def register(username, password):
     try:
         p.save()
     except:
-        return 2
-    return 0
+        return (3, 'Could not save personal information')
+
+    return (0, None)
 
 
 def auth(username, password):
