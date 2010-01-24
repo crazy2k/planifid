@@ -6,20 +6,15 @@ Varias funciones utiles.
 import string
 import os
 
-permitidos = string.ascii_letters + string.digits + '-_.'
+nice_chars = string.ascii_letters + string.digits + '-_.'
 
-def clean(s):
-    "Deja en el string s solo los caracteres permitidos"
-    v = ''
-    count = 0
-    for i in s:
-        if count == 20:
-            break
-        if i in permitidos:
-            v += i
-            count += 1
-    return v
+def filterstr(s, allowed = nice_chars):
+    new = [c for c in s if c in allowed]
+    new = string.join(new, '')
+    return new
 
+def passes_filter(s, allowed = nice_chars):
+    return s == filterstri(s, allowed)
 
 def get_file_contents(fpath):
     fd = open(fpath)
