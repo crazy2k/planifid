@@ -15,3 +15,8 @@ Para mas adelante
 * soporte de equivalencias
 * soporte multiples carreras
 
+Bugs
+* Aparentemente, en la carrera de Quimica, esta puesto el codigo 77.07
+  a Ing. de las Instalaciones II cuando el codigo es 76.07
+
+
