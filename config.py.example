@@ -18,35 +18,35 @@ data_encoding = 'latin1'
 
 
 class session:
-	"Configuracion del manejo de sesiones"
+    "Configuracion del manejo de sesiones"
 
-	# tiempo de vida estandar de las sesiones, en segundos
-	ttl = 10 * 60
+    # tiempo de vida estandar de las sesiones, en segundos
+    ttl = 10 * 60
 
 
 class personal:
-	"Configuracion de la informacion personal"
+    "Configuracion de la informacion personal"
 
-	# directorio base de la informacion de los usuarios
-	basedir = datadir + '/users'
+    # directorio base de la informacion de los usuarios
+    basedir = datadir + '/users'
 
-	# numero maximo de entradas en el cache
-	cache_max = 20
+    # numero maximo de entradas en el cache
+    cache_max = 20
 
 
 # lista de carreras y su respectivo archivo
 carreras = {
-	'AGR': 'agrimensura.dat',
-	'ALI': 'alimentos.dat',
-	'CIV': 'civil.dat',
-	'ELC': 'electricista.dat',
-	'ELE': 'electronica.dat',
-	'IND': 'industrial.dat',
-	'INF': 'informatica.dat',
-	'MEC': 'mecanica.dat',
-	'NAV': 'naval.dat',
-	'QUI': 'quimica.dat',
-	'SIS': 'sistemas.dat',
+    'AGR': 'agrimensura.dat',
+    'ALI': 'alimentos.dat',
+    'CIV': 'civil.dat',
+    'ELC': 'electricista.dat',
+    'ELE': 'electronica.dat',
+    'IND': 'industrial.dat',
+    'INF': 'informatica.dat',
+    'MEC': 'mecanica.dat',
+    'NAV': 'naval.dat',
+    'QUI': 'quimica.dat',
+    'SIS': 'sistemas.dat',
 }
 
 
