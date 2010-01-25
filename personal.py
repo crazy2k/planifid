@@ -11,20 +11,60 @@ import config
 import utils
 import session
 
+class Progdata:
+    def __init__(self, id, uni, fac, prog, inid, inim, iniy):
+        self.id = id
+        self.uni = uni
+        self.fac = fac
+        self.prog = prog
+        self.ini = (inid, inim, iniy)
+
+        self.passed = []
+        self.doing = []
+
+        self.average = 0
+
+    def todict(self):
+        d = {
+            'id': self.id,
+            'uni': self.uni,
+            'fac': self.fac,
+            'prog': self.prog,
+            'inid': self.ini[0],
+            'inim': self.ini[1],
+            'iniy': self.ini[2],
+            'passed': self.passed,
+            'doing': self.doing,
+            }
+            
+        return d
+
+    def fromdict(self, d):
+        self.id = d['id']
+        self.uni = d['uni']
+        self.fac = d['fac']
+        self.prog = d['prog']
+        self.ini = (d['inid'], d['inim'], d['iniy'])
+        self.passed = d['passed']
+        self.doing = d['doing']
+
+        self.recalculate_avg()
+
+    def recalculate_avg(self):
+        pass
+
+
 class Personal:
     "Representa la informacion personal y el estado de una carrera"
     def __init__(self):
         self.username = ''
-        self.nombre = ''
-        self.padron = ''
         self.password = ''
-        self.carrera = ''
-        self.aprobadas = {}        # { 'CODIGO': nota, ... }
-        self.cursando = []
-        self.inicio = []
-        self.hace_tesis = 0
-        self.area = ''
-        self.promedio = 0
+        self.realname = ''
+
+        self.progdatas = []
+
+    def add_progdata(self, id, uni, fac, prog, inid, inim, iniy):
+        self.progdatas.append(Progdata(id, uni, fac, prog, inid, inim, iniy))
 
     def save(self):
         f = config.personal.basedir + '/' + self.username
@@ -34,27 +74,24 @@ class Personal:
 
     def todict(self):
         "Convierte la informacion personal en un diccionario"
-        d = {}
-        d['username'] = self.username
-        d['nombre'] = self.nombre
-        d['padron'] = self.padron
-        d['carrera'] = self.carrera
-        d['aprobadas'] = self.aprobadas
-        d['cursando'] = self.cursando
-        d['inicio'] = self.inicio
-        d['hace_tesis'] = self.hace_tesis
-        d['area'] = self.area
-        d['promedio'] = self.promedio
+        d = {
+            'username': self.username,
+            'realname': self.realname,
+            'progdatas': [pd.todict for pd in self.progdatas],
+            }
         return d
 
     def fromdict(self, d):
         "De un diccionario acomoda la informacion personal"
-        self.nombre = d['nombre']
-        self.padron = d['padron']
-        self.carrera = d['carrera']
-        self.area = d['area']
-        self.hace_tesis = d['hace_tesis']
-        self.inicio = d['inicio']
+
+
+        self.username = d['username']
+        self.realname = d['realname']
+
+        iter = iter(d['progdatas'])
+        for pd in self.progdatas:
+            pd.fromdict(iter.next())
+
         self.save()
 
 
@@ -94,7 +131,7 @@ def register(username, password):
     if not utils.passes_filter(username):
         i.append('username')
 
-        if utils.passes_filter(password):
+        if not utils.passes_filter(password):
             i.append('password')
 
         return (2, i)
