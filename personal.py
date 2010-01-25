@@ -76,13 +76,16 @@ def isregistered(username):
 
 def register(username, password):
     """Return:
-        * (0, None) if registration succeeds,
-        * (1, None) if username already exists
+        * (0, <anything>) if registration succeeds,
+        * (1, <anything>) if username already exists
         * (2, <indication>) if there's a validation problem;
           <indication> will be a list with 'username' and/or 'password'
           as elements.
         * (3, <reason>) if there's some other problem. <reason> will
           tell what's the problem about.
+
+        <anything> could be any object; empty string is a good
+        candidate.
 
     """
 
@@ -98,7 +101,7 @@ def register(username, password):
 
     # we see whether the username is already registered
     if isregistered(username):
-        return (1, None)
+        return (1, '')
 
     p = Personal()
     p.username = username
@@ -109,7 +112,7 @@ def register(username, password):
     except:
         return (3, 'Could not save personal information')
 
-    return (0, None)
+    return (0, '')
 
 
 def auth(username, password):
