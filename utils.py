@@ -14,7 +14,7 @@ def filterstr(s, allowed = nice_chars):
     return new
 
 def passes_filter(s, allowed = nice_chars):
-    return s == filterstri(s, allowed)
+    return s == filterstr(s, allowed)
 
 def get_file_contents(fpath):
     fd = open(fpath)
