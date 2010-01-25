@@ -44,8 +44,6 @@ def register(username, password):
 def auth(username, password):
     """Autentica un usuario, devuelve un string con el session ID, o un
     string vacio si hubo un error de autenticacion."""
-    username = utils.clean(username)
-    password = utils.clean(password)
     return personal.auth(username, password)
 
 
@@ -218,6 +216,13 @@ def set_personal(sid, d):
         return 0
     p = _sid2per(sid)
     p.fromdict(d)
+    return 1
+
+def add_progdata_to_personal(sid, id, uni, fac, prog, inid, inim, iniy):
+    p = _sid2per(sid)
+
+    p.add_progdata(id, uni, fac, prog, inid, inim, iniy)
+
     return 1
 
 def set_passwd(sid, passwd):
