@@ -62,8 +62,8 @@ def get_facultades(uni = ''):
     facs = {}
 
     for uni_k, uni_v, fac_k, fac_v in iter_data(uni):
-        key = utils.gen_key(uni_k, fac_k)
-        facs[key] = fac_v['name']
+        #key = utils.gen_key(uni_k, fac_k)
+        facs[fac_k] = fac_v['name']
     return facs
 
 def get_carreras(uni = '', fac = ''):
@@ -75,8 +75,8 @@ def get_carreras(uni = '', fac = ''):
     for uni_k, uni_v, fac_k, fac_v in iter_data(uni, fac):
         programs = fac_v['programs']
         for prog_k, prog_v in programs.iteritems():
-            key = utils.gen_key(uni_k, fac_k, prog_k)
-            cars[key] = prog_v.desc
+            #key = utils.gen_key(uni_k, fac_k, prog_k)
+            cars[prog_k] = prog_v.desc
 
     return cars
 
