@@ -176,23 +176,50 @@ def get_personal(sid):
     return _sid2per(sid).todict()
 
 def set_personal(sid, d):
-    """Setea la informacion personal, devuelve 1 si esta todo bien o 0 si
-    hubo un error."""
-    if not config.carreras.has_key(d['carrera']):
-        return 0
-    if not carreras[d['carrera']].areas.has_key(d['area']):
-        return 0
-    if d['hace_tesis'] not in (0, 1):
-        return 0
-    try:
-        # si esto no tira una excepcion, la fecha es valida
-        time.strptime("%s/%s/%s" % tuple(d['inicio']), "%d/%m/%Y")
-    except:
-        print d['inicio']
-        return 0
+    """Set personal information. Return:
+        * (0, <anything>) if setting succeeds,
+        * (1, <anything>) if username already exists (and the owner is
+          somebody else)
+        * (2, <indication>) if there's a validation problem;
+          <indication> will be a list that indicates the invalid
+          fields.
+        * (3, <program's id>) if a program is not in the database.
+        * (4, <reason>) if there's some other problem. <reason> will
+          tell what's the problem about.
+
+        <anything> could be any object; empty string is a good
+        candidate.
+
+    """
+
+    invalids = []
+
+    for pd in d['progdatas']:
+        if pd['prog'] not in get_carreras(pd['uni'], pd['fac']):
+            id = '%s/%s/%s' % (pd['uni'], pd['fac'], pd['prog'])
+            return (3, id)
+
+        # date validation
+        try:
+            # if this doesn't raise an exception, date is valid
+            date = "%s/%s/%s" % (pd['inid'], pd['inim'], pd['iniy'])
+            time.strptime(date, "%d/%m/%Y")
+        except ValueError:
+            invalids.append('date: %s/%s/%s' % (pd['uni'], pd['fac'], pd['prog']))
+
+    # other data validation
+    named_objs = {'username': d['username'], 'realname': d['realname']}
+    invalids.extend(utils.invalids(named_objs, utils.passes_filter))
+    if invalids:
+        return (2, invalids)
+    
+    # TODO: Check whether the new username is already registered by
+    # someone else
+
     p = _sid2per(sid)
+
     p.fromdict(d)
-    return 1
+    return (0, '')
 
 def add_progdata_to_personal(sid, id, uni, fac, prog, inid, inim, iniy):
     p = _sid2per(sid)
