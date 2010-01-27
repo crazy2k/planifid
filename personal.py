@@ -118,7 +118,7 @@ def isregistered(username):
         return True
     except:
         return False
-        
+
 
 def register(username, password):
     """Return:
@@ -136,13 +136,9 @@ def register(username, password):
     """
 
     # data validation
-    i = []  # i is the <indication>
-    if not utils.passes_filter(username):
-        i.append('username')
-
-        if not utils.passes_filter(password):
-            i.append('password')
-
+    named_objs = {'username': username, 'password': password}
+    i = utils.invalids(named_objs, utils.passes_filter)
+    if i:
         return (2, i)
 
     # we see whether the username is already registered
