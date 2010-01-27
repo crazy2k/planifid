@@ -25,6 +25,7 @@ universities_path = os.path.join(config.datadir, 'universities/')
 data = {}
 parsers.dir_to_dict(universities_path, data)
 
+
 #
 # Account related functions
 #
@@ -59,7 +60,7 @@ def get_universidades():
 def get_facultades(uni = ''):
     facs = {}
 
-    for uni_k, uni_v, fac_k, fac_v in iter_data(uni):
+    for uni_k, uni_v, fac_k, fac_v in utils.iter_data(data, uni):
         #key = utils.gen_key(uni_k, fac_k)
         facs[fac_k] = fac_v['name']
     return facs
@@ -70,7 +71,7 @@ def get_carreras(uni = '', fac = ''):
 
     cars = {}
 
-    for uni_k, uni_v, fac_k, fac_v in iter_data(uni, fac):
+    for uni_k, uni_v, fac_k, fac_v in utils.iter_data(data, uni, fac):
         programs = fac_v['programs']
         for prog_k, prog_v in programs.iteritems():
             #key = utils.gen_key(uni_k, fac_k, prog_k)
@@ -84,38 +85,13 @@ def get_materias(uni = '', fac = ''):
 
     mats = {}
 
-    for uni_k, uni_v, fac_k, fac_v in iter_data(uni, fac):
+    for uni_k, uni_v, fac_k, fac_v in utils.iter_data(data, uni, fac):
         courses = fac_v['courses']
         for cour_k, cour_v in courses.iteritems():
             key = utils.gen_key(uni_k, fac_k, cour_k)
             mats[key] = cour_v.desc
 
     return mats
-
-def iter_data(uni = '', fac = ''):
-    """Devuelve un iterador sobre el diccionario data filtrado segun
-    los valores correspondientes a una universidad y facultad pasados
-    por parametro.
-    
-    El iterador devuelve (uni_code, uni_value, fac_code, fac_value)
-    donde los items representan las claves y valores de cada universidad
-    y facultad en el diccionario."""
-
-    base = data
-    # si se especifica una universidad, iteramos solo sobre sus datos
-    if uni:
-        base = {uni: data[uni]}
-
-    for uni_code, uni_value in base.iteritems():
-
-        faculties = uni_value['faculties']
-        # si se especifica una facultad, iteramos solo sobre sus datos
-        if fac:
-            faculties = {fac: uni_value['faculties'][fac]}
-
-        for fac_code, fac_value in faculties.iteritems():
-            yield (uni_code, uni_value, fac_code, fac_value)
-
 
 def get_areas(carrera):
     """Devuelve un diccionario { 'COD': 'Descripcion', ... } de las areas
