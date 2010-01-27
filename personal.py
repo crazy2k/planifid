@@ -84,13 +84,22 @@ class Personal:
     def fromdict(self, d):
         "De un diccionario acomoda la informacion personal"
 
-
         self.username = d['username']
         self.realname = d['realname']
 
-        iter = iter(d['progdatas'])
-        for pd in self.progdatas:
-            pd.fromdict(iter.next())
+        for pd_dict in d['progdatas']:
+            pd_added = False
+            for pd in self.progdatas:
+                if pd.uni == pd_dict['uni'] and pd.fac == pd_dict['fac'] and \
+                    pd.prog == pd_dict['prog']:
+
+                    pd.fromdict(pd_dict)
+                    pd_added = True
+
+            if not pd_added:
+                self.progdatas.append(Progdata(pd_dict['id'], pd_dict['uni'],
+                    pd_dict['fac'], pd_dict['prog'], pd_dict['inid'],
+                    pd_dict['inim'], pd_dict['iniy']))
 
         self.save()
 
