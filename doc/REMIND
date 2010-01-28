@@ -1,0 +1,43 @@
+Algunas ideas para recordar en caso de que se hagan cambios en el servidor.
+
+Directorio ``universities/`` en el ``datadir`` de ``config.py``
+===============================================================
+
+Jerarquía:
+* universities/
+    - <codigo-universidad>/
+        - name
+        - faculties/
+            - <codigo-facultad>/
+                - name
+                - courses
+                - programs/
+                    - <codigo-carrera>
+
+Aclaraciones:
+- <codigo-universidad> debe ser un nombre corto (quizás las siglas) sin
+  caracteres extraños que identifique a la universidad (por ejemplo,
+  ``uba``).
+- <codigo-facultad> debe ser lo mismo que <codigo-universidad> pero aplicado
+  a una facultad (por ejemplo, ``fi``). Pueden existir codigos iguales de
+  facultad para universidades distintas.
+- <codigo-carrera> debe ser lo mismo que <codigo-facultad> pero aplicado a
+  una carrera.
+- Para identificar a una universidad/facultad/materia/carrera específica,
+  se definen los identificadores (o ids) de la siguiente forma:
+  - <id-universidad>: <codigo-universidad> correspondiente.
+  - <id-facultad>: <id-universidad>/<codigo-facultad> donde el código es el
+    correspondiente.
+  - <id-materia>: <id-facultad>/<codigo-materia> donde <codigo-materia> es el
+    código de la materia en el archivo ``courses`` correspondiente a la
+    facultad y universidad determinadas.
+  - <id-carrera>: <id-facultad>/<codigo-carrera> donde el código es el
+    correspondiente.
+
+Mapa de acción
+==============
+
+1. Funcionalidad
+2. Correctitud
+3. Seguridad
+

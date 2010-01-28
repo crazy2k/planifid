@@ -1,0 +1,22 @@
+
+Para ahora
+* multiples conexiones simultaneas
+* rate control
+* limitar cantidad de cookies simultaneas (cookie cache como personal?)
+* marcar materias por utilidad (binario o escala?)
+* revisar los creditos (obtencion, etc.)
+* get_estado_materias() acepte multiples materias (o todas)
+* keepalive para las sesiones (devuelve el ttl de la sesion)
+* obtener datos de la carrera (cant. de creditos, creditos en oblig., etc.)
+* calculo del promedio
+* nombre dentro de datos personales
+
+Para mas adelante
+* soporte de equivalencias
+* soporte multiples carreras
+
+Bugs
+* Aparentemente, en la carrera de Quimica, esta puesto el codigo 77.07
+  a Ing. de las Instalaciones II cuando el codigo es 76.07
+
+
