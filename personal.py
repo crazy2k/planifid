@@ -35,7 +35,7 @@ class Progdata:
             'iniy': self.ini[2],
             'passed': self.passed,
             'doing': self.doing,
-            }
+        }
             
         return d
 
@@ -77,7 +77,7 @@ class Personal:
         d = {
             'username': self.username,
             'realname': self.realname,
-            'progdatas': [pd.todict for pd in self.progdatas],
+            'progdatas': [pd.todict() for pd in self.progdatas],
             }
         return d
 
@@ -102,6 +102,9 @@ class Personal:
                     pd_dict['inim'], pd_dict['iniy']))
 
         self.save()
+
+    def __repr__(self):
+        return '<personal: %s' % str(self.todict())
 
 
 def load(username):
