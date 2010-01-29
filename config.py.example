@@ -1,52 +1,34 @@
 
 """
-Archivo de configuracion del planifid
+Configuration file
 """
 
-# directorio base para los datos, y donde se almacena la informacion de las
-# carreras y las materias
+# path to the directory where all data resides
 datadir = "./data"
 
-# address y port donde esperar conexiones; si el address es el string vacio,
-# espera en todas las ips
+# address and port where connections will be waited for; if address is an
+# empty string, the server waits at all IPs
 addr = 'localhost'
 port = 8027
 
-# encoding en el cual estan almacenados los archivos de datos (en el tarball
-# oficial estan en latin1)
+# encoding used in data files
 data_encoding = 'latin1'
 
 
 class session:
-    "Configuracion del manejo de sesiones"
+    "Session handling configuration."
 
-    # tiempo de vida estandar de las sesiones, en segundos
+    # standard lifetime for sessions (in seconds)
     ttl = 10 * 60
 
 
 class personal:
-    "Configuracion de la informacion personal"
+    "User's personal information configuration."
 
-    # directorio base de la informacion de los usuarios
+    # base directory where users' information resides
     basedir = datadir + '/users'
 
-    # numero maximo de entradas en el cache
+    # max number of entries in the cache
     cache_max = 20
-
-
-# lista de carreras y su respectivo archivo
-carreras = {
-    'AGR': 'agrimensura.dat',
-    'ALI': 'alimentos.dat',
-    'CIV': 'civil.dat',
-    'ELC': 'electricista.dat',
-    'ELE': 'electronica.dat',
-    'IND': 'industrial.dat',
-    'INF': 'informatica.dat',
-    'MEC': 'mecanica.dat',
-    'NAV': 'naval.dat',
-    'QUI': 'quimica.dat',
-    'SIS': 'sistemas.dat',
-}
 
 
