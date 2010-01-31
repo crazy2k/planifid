@@ -9,7 +9,7 @@ import parsers
 import utils
     
 
-def dirpath_to_dict(path, base_data = None, prev_base_data = None):
+def dir_to_dict(path, base_data = None, prev_base_data = None):
     """From a path to a directory, walk it and construct a dictionary
     whose structure mimics the one of the tree and has domain-specific
     objects instead of data files, and then return it.
@@ -42,6 +42,6 @@ def dirpath_to_dict(path, base_data = None, prev_base_data = None):
 
     return data
 
-datadict = dirpath_to_dict(config.unisdir)
+datadict = dir_to_dict(config.unisdir)
 
 
