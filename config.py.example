@@ -3,8 +3,15 @@
 Configuration file
 """
 
-# path to the directory where all data resides
+import os
+
+# path to the directory where all data resides (actually, there's no
+# need for all data to reside here, but this path is typically used as
+# root for other paths in this file)
 datadir = "./data"
+
+# path to the universities' directory tree
+unisdir = os.path.join(datadir, 'universities/')
 
 # address and port where connections will be waited for; if address is an
 # empty string, the server waits at all IPs
@@ -26,7 +33,7 @@ class personal:
     "User's personal information configuration."
 
     # base directory where users' information resides
-    basedir = datadir + '/users'
+    basedir = os.path.join(datadir, 'users/')
 
     # max number of entries in the cache
     cache_max = 20

@@ -12,19 +12,9 @@ import session
 import parsers
 import utils
 import personal
+from data import datadict
 
-
-#
-# Common data loading
-#
-
-import os
-
-universities_path = os.path.join(config.datadir, 'universities/')
-
-data = {}
-parsers.dir_to_dict(universities_path, data)
-
+data = datadict
 
 #
 # Account related functions
