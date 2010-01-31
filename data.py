@@ -29,9 +29,9 @@ def dir_to_dict(path, base_data = None, prev_base_data = None):
         if fname in ['name']:
             data[fname] = utils.get_file_contents(fpath)
         elif fname == 'courses':
-            data[fname] = parse_materias(fpath)
+            data[fname] = parsers.parse_materias(fpath)
         elif os.path.basename(path) == 'programs':
-            data[fname] = parse_carrera(fpath,
+            data[fname] = parsers.parse_carrera(fpath,
                 prev_base_data['courses'])
     
     # despues los directorios
