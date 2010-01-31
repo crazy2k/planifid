@@ -65,7 +65,7 @@ def iter_data(data, uni = '', fac = ''):
 
 def invalids(named_objs, pred):
     r = []
-    for obj, name in named_objs.iteritems():
+    for name, obj in named_objs.iteritems():
         if not pred(obj):
             r.append(name)
 
