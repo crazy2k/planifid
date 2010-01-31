@@ -11,7 +11,7 @@ import utils
 import string
 
 import config
-from clases import Carrera, Area, Materia
+from domain import Carrera, Area, Materia
 
 
 def parse_materias(filename):
