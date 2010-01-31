@@ -182,7 +182,7 @@ def set_personal(sid, d):
 
     """
 
-    invalids = []
+    invs = [] # list of invalid fields
 
     for pd in d['progdatas']:
         if pd['prog'] not in get_carreras(pd['uni'], pd['fac']):
@@ -195,13 +195,17 @@ def set_personal(sid, d):
             date = "%s/%s/%s" % (pd['inid'], pd['inim'], pd['iniy'])
             time.strptime(date, "%d/%m/%Y")
         except ValueError:
-            invalids.append('date: %s/%s/%s' % (pd['uni'], pd['fac'], pd['prog']))
+            invs.append('date: %s/%s/%s' % (pd['uni'], pd['fac'], pd['prog']))
 
     # other data validation
-    named_objs = {'username': d['username'], 'realname': d['realname']}
-    invalids.extend(utils.invalids(named_objs, utils.passes_filter))
-    if invalids:
-        return (2, invalids)
+    named_objs = {'username': d['username']}
+    invs.extend(utils.invalids(named_objs, utils.is_valid_nonempty))
+
+    named_objs = {'realname': d['realname']}
+    invs.extend(utils.invalids(named_objs, utils.is_valid))
+
+    if invs:
+        return (2, invs)
     
     # TODO: Check whether the new username is already registered by
     # someone else

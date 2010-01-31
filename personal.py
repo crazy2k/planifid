@@ -143,9 +143,9 @@ def register(username, password):
 
     # data validation
     named_objs = {'username': username, 'password': password}
-    i = utils.invalids(named_objs, utils.passes_filter)
-    if i:
-        return (2, i)
+    invs = utils.invalids(named_objs, utils.is_valid_nonempty)
+    if invs:
+        return (2, invs)
 
     # we see whether the username is already registered
     if isregistered(username):

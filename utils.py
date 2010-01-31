@@ -14,9 +14,11 @@ def filterstr(s, allowed = nice_chars):
     return new
 
 
-def passes_filter(s, allowed = nice_chars):
+def is_valid(s, allowed = nice_chars):
     return s == filterstr(s, allowed)
 
+def is_valid_nonempty(s, allowed = nice_chars):
+    return is_valid(s, allowed) and s != ''
 
 def get_file_contents(fpath):
     fd = open(fpath)
