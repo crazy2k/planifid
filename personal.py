@@ -55,7 +55,7 @@ class Progdata:
 
 
 class Personal:
-    "Representa la informacion personal y el estado de una carrera"
+    """Represents user's personal information"""
     def __init__(self):
         self.username = ''
         self.password = ''
@@ -67,8 +67,11 @@ class Personal:
         self.progdatas.append(Progdata(id, uni, fac, prog, inid, inim, iniy))
 
     def save(self):
-        f = config.personal.basedir + '/' + self.username
-        fd = open(f, 'w')
+        if not os.path.isdir(config.personal.basedir):
+            os.mkdir(config.personal.basedir)
+
+        fname = os.path.join(config.personal.basedir, self.username)
+        fd = open(fname, 'w')
         pickle.dump(self, fd)
         fd.close()
 
