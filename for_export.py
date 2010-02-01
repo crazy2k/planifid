@@ -190,19 +190,12 @@ def set_personal(sid, d):
             return (3, id)
 
         # date validation
-        try:
-            # if this doesn't raise an exception, date is valid
-            date = "%s/%s/%s" % (pd['inid'], pd['inim'], pd['iniy'])
-            time.strptime(date, "%d/%m/%Y")
-        except ValueError:
-            invs.append('date: %s/%s/%s' % (pd['uni'], pd['fac'], pd['prog']))
+        date = "%s/%s/%s" % (pd['inid'], pd['inim'], pd['iniy'])
+        invs.extend(utils.invalids({'date': date}))
 
     # other data validation
-    named_objs = {'username': d['username']}
-    invs.extend(utils.invalids(named_objs, utils.is_valid_nonempty))
-
-    named_objs = {'realname': d['realname']}
-    invs.extend(utils.invalids(named_objs, utils.is_valid))
+    named_objs = {'username': d['username'], 'realname': d['realname']}
+    invs.extend(utils.invalids(named_objs, err_msg = True))
 
     if invs:
         return (2, invs)

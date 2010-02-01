@@ -143,7 +143,7 @@ def register(username, password):
 
     # data validation
     named_objs = {'username': username, 'password': password}
-    invs = utils.invalids(named_objs, utils.is_valid_nonempty)
+    invs = utils.invalids(named_objs, err_msg = True)
     if invs:
         return (2, invs)
 
